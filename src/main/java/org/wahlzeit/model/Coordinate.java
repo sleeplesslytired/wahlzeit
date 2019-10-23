@@ -20,6 +20,10 @@ public class Coordinate {
 
 	}
 
+	public boolean isEqual(Coordinate coordinate) {
+
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 
