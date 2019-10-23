@@ -20,4 +20,9 @@ public class Coordinate {
 
 	}
 
+	@Override
+	public boolean equals(Object o) {
+
+	} 
+
 }
