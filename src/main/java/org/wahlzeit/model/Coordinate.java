@@ -1,3 +1,6 @@
+import java.lang.Math.sqrt();
+import java.lang.Math.pow();
+
 public class Coordinate {
 
 	/**
@@ -29,7 +32,10 @@ public class Coordinate {
 	}
 
 	public double getDistance(Coordinate endpoint) {
-
+		double xRes = pow(this.x - endpoint.getX());
+		double yRes = pow(this.y - endpoint.getY());
+		double zRes = pow(this.z - endpoint.getZ());
+		return sqrt(xRes + yRes + zRes);
 	}
 
 	public boolean isEqual(Coordinate coordinate) {
