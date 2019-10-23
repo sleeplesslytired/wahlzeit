@@ -16,6 +16,18 @@ public class Coordinate {
 		this.z = z;
 	}
 
+	public double getX() {
+		return this.x;
+	}
+
+	public double getY() {
+		return this.y;
+	}
+
+	public double getZ() {
+		return this.z;
+	}
+
 	public double getDistance(Coordinate endpoint) {
 
 	}
