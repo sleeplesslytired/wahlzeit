@@ -33,7 +33,19 @@ public class Coordinate {
 	}
 
 	public boolean isEqual(Coordinate coordinate) {
+		if (this.x != coordinate.getX()) {
+			return false;
+		}
 
+		if (this.y != coordinate.getY()) {
+			return false;
+		}
+
+		if (this.z != coordinate.getZ()) {
+			return false;
+		}
+
+		return true;
 	}
 	
 	@Override
