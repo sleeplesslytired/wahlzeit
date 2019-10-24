@@ -73,7 +73,7 @@ public class Photo extends DataObject {
 	 *
 	 */
 	protected String ownerId;
-	
+
 	/**
 	 * Each photo can be viewed in different sizes (XS, S, M, L, XL)
 	 * Images are pre-computed in these sizes to optimize bandwidth when requested.
@@ -121,6 +121,11 @@ public class Photo extends DataObject {
 	 * The default type is jpg
 	 */
 	protected String ending = "jpg";
+	
+	/**
+	 *
+	 */
+	public Location location;
 	
 	/**
 	 *
