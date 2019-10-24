@@ -154,6 +154,15 @@ public class Photo extends DataObject {
 	}
 
 	/**
+	 * specify Location on initiation
+	 */
+	public Photo(Location location) {
+		this.id = PhotoId.getNextId();
+		incWriteCount();
+		this.location = location; 
+	}
+
+	/**
 	 * @methodtype get
 	 */
 	public Image getImage(PhotoSize photoSize) {
