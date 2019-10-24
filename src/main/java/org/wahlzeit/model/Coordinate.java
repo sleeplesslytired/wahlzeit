@@ -31,10 +31,10 @@ public class Coordinate {
 	}
 
 	public double getDistance(Coordinate endpoint) {
-		double xRes = pow(this.x - endpoint.getX());
-		double yRes = pow(this.y - endpoint.getY());
-		double zRes = pow(this.z - endpoint.getZ());
-		return sqrt(xRes + yRes + zRes);
+		double xRes = Math.pow(this.x - endpoint.getX(), 2);
+		double yRes = Math.pow(this.y - endpoint.getY(), 2);
+		double zRes = Math.pow(this.z - endpoint.getZ(), 2);
+		return Math.sqrt(xRes + yRes + zRes);
 	}
 
 	public boolean isEqual(Coordinate coordinate) {
