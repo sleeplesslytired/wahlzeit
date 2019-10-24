@@ -1,5 +1,4 @@
-import java.lang.Math.sqrt();
-import java.lang.Math.pow();
+import java.lang.Math;
 
 public class Coordinate {
 
