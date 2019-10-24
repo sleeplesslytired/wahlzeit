@@ -5,9 +5,9 @@ public class Coordinate {
 	/**
 	 * all three values triangulate the coordiante
 	 */
-	private static final double x;	
-	private static final double y;
-	private static final double z;
+	private double x;	
+	private double y;
+	private double z;
 
 	/**
 	 *
