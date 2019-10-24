@@ -10,4 +10,5 @@
 .project
 .classpath
 run.sh
+dockered_run.sh
 *.swp
