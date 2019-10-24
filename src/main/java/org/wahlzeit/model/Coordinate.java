@@ -55,11 +55,11 @@ public class Coordinate {
 	
 	@Override
 	public boolean equals(Object o) {
-		if (! o instanceof Coordinate) {
+		if (! (o instanceof Coordinate)) {
 			return false;
 		}
 
-		return isEqual(o);
+		return isEqual((Coordinate) o);
 	} 
 
 }
