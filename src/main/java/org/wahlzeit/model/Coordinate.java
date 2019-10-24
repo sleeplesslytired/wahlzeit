@@ -1,3 +1,6 @@
+package org.wahlzeit.model;
+
+
 import java.lang.Math;
 
 public class Coordinate {
