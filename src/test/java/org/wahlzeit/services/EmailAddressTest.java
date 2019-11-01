@@ -46,7 +46,7 @@ public class EmailAddressTest extends TestCase {
 		assertTrue(createEmailAddressIgnoreException("bingo.bongo@bongo.com"));
 		assertTrue(createEmailAddressIgnoreException("bingo+bongo@bango"));
 
-		assertFalse(createEmailAddressIgnoreException("bingo@bongo");
+		assertFalse(createEmailAddressIgnoreException("bingo@bongo"));
 	}
 
 	/**
