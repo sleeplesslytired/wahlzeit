@@ -59,9 +59,11 @@ dependencies {
 }
 
 test {
-    filter {
-        includeTestsMatching "org.wahlzeit.*"
-    }
+	useJUnitPlatform()
+
+	testLogging.showStandardStreams = true
+
+	include 'org.wahlzeit.services.EmailAddressTest'
     testLogging {
             events "passed", "skipped", "failed"
 
