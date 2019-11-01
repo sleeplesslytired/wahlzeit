@@ -79,7 +79,7 @@ public class EmailAddressTest extends TestCase {
 		EmailAddress ea1 = EmailAddress.getFromString("equal.address@notthesame.com");
 
 		assertTrue(ea0.isEqual(ea0));
-		assertFalse(ea0.testIsEqual(ea1));
+		assertFalse(ea0.isEqual(ea1));
 	}
 	
 	/**
