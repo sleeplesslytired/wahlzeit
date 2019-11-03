@@ -62,7 +62,10 @@ public class EmailServiceTest {
 	@Test
 	public void testSendValidEmail() {
 		try {
+			EmailAddress validReceiver = EmailAddress.getFromString("sendMeMore@test.de");
+
 			assertTrue(emailService.sendEmailIgnoreException(validAddress, validAddress, "hi", "test"));
+			assertTrue(emailService.sendEmailIgnoreException(validAddress, validReceiver, "Nice subject", "Nice body"));
 		} catch (Exception ex) {
 			Assert.fail("Silent mode does not allow exceptions");
 		}
