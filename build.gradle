@@ -63,7 +63,10 @@ test {
 
 	testLogging.showStandardStreams = true
 
-	include 'org.wahlzeit.services.EmailAddressTest'
+	filter {
+		includeTestsMatching "org.wahlzeit.AllTests"
+	}
+
     testLogging {
             events "passed", "skipped", "failed"
 
