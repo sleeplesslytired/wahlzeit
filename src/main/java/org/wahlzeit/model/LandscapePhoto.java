@@ -6,4 +6,8 @@ import org.wahlzeit.model.Photo;
 @Entity
 public class LandscapePhoto extends Photo {
 
+	public LandscapePhoto() {
+		super();
+	}
+
 }
