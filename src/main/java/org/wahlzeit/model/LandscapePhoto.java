@@ -10,4 +10,9 @@ public class LandscapePhoto extends Photo {
 		super();
 	}
 
+	public LandscapePhoto(PhotoId myId) {
+		super(myId);
+
+	}
+
 }
