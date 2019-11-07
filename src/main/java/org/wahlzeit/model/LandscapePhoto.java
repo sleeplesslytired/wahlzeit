@@ -12,7 +12,10 @@ public class LandscapePhoto extends Photo {
 
 	public LandscapePhoto(PhotoId myId) {
 		super(myId);
+	}
 
+	public LandscapePhoto(Location location) {
+		super(location);
 	}
 
 }
