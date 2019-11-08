@@ -13,4 +13,8 @@ public class Location {
 	public Coordinate getCoordinate() {
 		return this.coordinate;
 	}
+
+	public String getCoordinate() {
+		return this.coordinate;
+	}
 }
