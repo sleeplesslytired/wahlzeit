@@ -44,7 +44,7 @@ public class EmailServiceTest {
 			assertFalse(emailService.sendEmailIgnoreException(null, validAddress, "lol", "body"));
 			assertFalse(emailService.sendEmailIgnoreException(validAddress, null, "lol", "hi"));
 			assertFalse(emailService.sendEmailIgnoreException(validAddress, validAddress, "", "hi"));
-			assertFalse(emailService.sendEmailIgnoreException(validAddress, validAddress, "hi", "       "));
+			assertFalse(emailService.sendEmailIgnoreException(validAddress, validAddress, "hi", null));
 
 			assertFalse(emailService.sendEmailIgnoreException(null, null, "lol", "body"));
 			assertFalse(emailService.sendEmailIgnoreException(null, validAddress, null, "body"));
