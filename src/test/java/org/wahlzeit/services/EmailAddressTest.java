@@ -85,7 +85,8 @@ public class EmailAddressTest extends TestCase {
 	/**
 	 *
 	 */
-	@Test void testValidEmailAddress() {
+	@Test
+    public void testValidEmailAddress() {
 		EmailAddress ea = EmailAddress.getFromString("muchvalid@veryvalid.com");	
 
 		assertTrue(ea.isValid());
