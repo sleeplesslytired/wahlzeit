@@ -21,4 +21,22 @@ public class LandscapePhoto extends Photo {
 		super(location);
 	}
 
+	public List<String> getLandscapeDescriptors() {
+		List<String> landscapeDescriptors = new LinkedList<String>();
+		for (String item : this.landscapeDescriptors) {
+			landscapeDescriptors.add(item);
+		}
+		return landscapeDescriptors;
+	}
+
+	public void addLandscapeDescriptor(String newDescriptor) {
+		for (String item : this.landscapeDescriptors) {
+			if(item.toUpperCase().equals(newDescriptor.toUpperCase())) {
+				return;
+			}
+		}
+
+		this.landscapeDescriptors.add(newDescriptor);
+	}
+
 }
