@@ -35,7 +35,7 @@ public class LandscapePhoto extends Photo {
 		}
 
 		if (newDescriptor.equals("")) {
-			throw new IllegalArgumentException("descritpor should not be empty");
+			throw new IllegalArgumentException("descripttor should not be empty");
 		}
 
 		for (String item : this.landscapeDescriptors) {
@@ -48,12 +48,13 @@ public class LandscapePhoto extends Photo {
 
 	}
 
-	public void addLandscapeDescriptor(String newDescriptor) {
+	public boolean addLandscapeDescriptor(String newDescriptor) {
 		try {
 			doAddLandscapeDescriptor(newDescriptor);
 		} catch (IllegalArgumentException ex) {
-			return;
+			return false;
 		}
+		return true;
 	}
 
 }
