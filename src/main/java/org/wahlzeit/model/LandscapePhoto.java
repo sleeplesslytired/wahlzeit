@@ -29,14 +29,31 @@ public class LandscapePhoto extends Photo {
 		return landscapeDescriptors;
 	}
 
-	public void addLandscapeDescriptor(String newDescriptor) {
+	protected void doAddLandscapeDescriptor(String newDescriptor) throws IllegalArgumentException {
+		if (newDescriptor == null) {
+			throw new IllegalArgumentException("descriptor is not allowed to be null");
+		}
+
+		if (newDescriptor.equals("")) {
+			throw new IllegalArgumentException("descritpor should not be empty");
+		}
+
 		for (String item : this.landscapeDescriptors) {
 			if(item.toUpperCase().equals(newDescriptor.toUpperCase())) {
-				return;
+				throw new IllegalArgumentException("descriptor already exists");
 			}
 		}
 
 		this.landscapeDescriptors.add(newDescriptor);
+
+	}
+
+	public void addLandscapeDescriptor(String newDescriptor) {
+		try {
+			doAddLandscapeDescriptor(newDescriptor);
+		} catch (IllegalArgumentException ex) {
+			return;
+		}
 	}
 
 }
