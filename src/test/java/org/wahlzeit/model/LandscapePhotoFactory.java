@@ -12,4 +12,13 @@ public class LandscapePhotoFactory extends PhotoFactory {
 		super();
 	}
 
+	public static synchronized LandscapePhotoFactory getInstance() {
+		if (this.instance == null) {
+			log.config(LogBuilder.createSystemMessage().addAction("setting generic LandscapePhotoFactory").toString());
+			setInstance(new LandscapePhotoFactory());
+		}
+
+		return instance;
+	}
+	
 }
