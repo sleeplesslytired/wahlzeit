@@ -12,7 +12,7 @@ public class LandscapePhotoManager extends PhotoManager {
 	/**
 	 *
 	 */
-	protected static final LandscapePhotoManager instance = new LandscapePhotoManager();
+	protected static final PhotoManager instance = new LandscapePhotoManager();
 
 	private static final Logger log = Logger.getLogger(PhotoManager.class.getName());
 
