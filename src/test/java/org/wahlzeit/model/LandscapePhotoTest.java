@@ -20,10 +20,10 @@ public class LandscapePhotoTest extends TestCase {
 
 	@Test
 	public void TestAddValidLandscapeDescriptorMultiple() {
-		asserTrue(photo1.addLandscapeDescriptor("Desert"));
-		asserTrue(photo1.addLandscapeDescriptor("Coastline"));
-		asserTrue(photo1.addLandscapeDescriptor("Lake"));
-		asserTrue(photo1.addLandscapeDescriptor("Hills"));
+		assertTrue(photo1.addLandscapeDescriptor("Desert"));
+		assertTrue(photo1.addLandscapeDescriptor("Coastline"));
+		assertTrue(photo1.addLandscapeDescriptor("Lake"));
+		assertTrue(photo1.addLandscapeDescriptor("Hills"));
 	}
 	
 	@Test
@@ -38,7 +38,7 @@ public class LandscapePhotoTest extends TestCase {
 
 	@Test
 	public void TestAddRedundantLandscapeDescriptor() {
-		asserTrue(photo0.addLandscapeDescriptor("Tundra"));
+		assertTrue(photo0.addLandscapeDescriptor("Tundra"));
 		assertFalse(photo0.addLandscapeDescriptor("Tundra"));
 	}
 
