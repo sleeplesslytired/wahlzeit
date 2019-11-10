@@ -21,4 +21,11 @@ public class LandscapePhotoManager extends PhotoManager {
 	 */
 	protected Map<PhotoId, LandscapePhoto> photoCache = new HashMap<PhotoId, LandscapePhoto>();
 
+	/**
+	 * 
+	 */
+	public LandscapePhotoManager() {
+		photoTagCollector = LandscapePhotoFactory.getInstance().createPhotoTagCollector();
+	}
+
 }
