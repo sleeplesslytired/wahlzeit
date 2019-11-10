@@ -9,18 +9,30 @@ import java.util.LinkedList;
 public class LandscapePhoto extends Photo {
 	private List<String> landscapeDescriptors = new LinkedList<String>();
 
+	/**
+	 *
+	 */
 	public LandscapePhoto() {
 		super();
 	}
 
+	/**
+	 * @methodtype constructor
+	 */
 	public LandscapePhoto(PhotoId myId) {
 		super(myId);
 	}
 
+	/**
+	 * specify Location on initiation
+	 */
 	public LandscapePhoto(Location location) {
 		super(location);
 	}
 
+	/**
+	 * @methodtype get
+	 */
 	public List<String> getLandscapeDescriptors() {
 		List<String> landscapeDescriptors = new LinkedList<String>();
 		for (String item : this.landscapeDescriptors) {
@@ -29,6 +41,9 @@ public class LandscapePhoto extends Photo {
 		return landscapeDescriptors;
 	}
 
+	/**
+	 * @methodtype add
+	 */
 	protected void doAddLandscapeDescriptor(String newDescriptor) throws IllegalArgumentException {
 		if (newDescriptor == null) {
 			throw new IllegalArgumentException("descriptor is not allowed to be null");
