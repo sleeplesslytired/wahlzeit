@@ -45,5 +45,9 @@ public class LandscapePhotoFactory extends PhotoFactory {
 		return new LandscapePhoto(location);
 	}
 
+	public LandscapePhoto loadLandscapePhoto(PhotoId id) {
+		return null;
+	}
+
 	
 }
