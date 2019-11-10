@@ -14,7 +14,8 @@ import org.wahlzeit.model.*;
 					 PhotoFilterTest.class,
 					 TagsTest.class,
 					 UserStatusTest.class,
-					 ValueTest.class})
+					 ValueTest.class,
+					 LandscapePhotoTest.class})
 public class ModelTestSuite {
 
 }
