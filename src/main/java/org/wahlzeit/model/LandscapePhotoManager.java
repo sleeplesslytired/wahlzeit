@@ -28,4 +28,20 @@ public class LandscapePhotoManager extends PhotoManager {
 		photoTagCollector = LandscapePhotoFactory.getInstance().createPhotoTagCollector();
 	}
 
+	public Photo getPhotoFromId(PhotoId id) {
+		if (id == null) {
+			return null;
+		}
+
+		Photo result = doGetPhotoFromId(id);
+
+		if (result == null) {
+			result = LandscapePhotoFactory.getInstance().loadPhoto(id);
+			if (result != null) {
+				doAddPhoto(result);
+			}
+		}
+
+		return result;
+	}
 }
