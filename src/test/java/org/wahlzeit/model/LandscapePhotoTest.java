@@ -26,5 +26,10 @@ public class LandscapePhotoTest extends TestCase {
 		asserTrue(photo1.addLandscapeDescriptor("Hills"));
 	}
 	
+	@Test
+	public TestAddNullLandscapeDescriptor() {
+		assertFalse(photo0.addLandscapeDescriptor(null));
+	}
+
 
 }
