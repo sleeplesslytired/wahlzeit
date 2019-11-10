@@ -32,5 +32,18 @@ public class LandscapePhotoFactory extends PhotoFactory {
 
 		instance = landscapePhotoFactory;
 	}
+
+	public LandscapePhoto createLandscapePhoto() {
+		return new LandscapePhoto();
+	}
+
+	public LandscapePhoto createLandscapePhoto(PhotoId id) {
+		return new LandscapePhoto(id);
+	}
+
+	public LandscapePhoto createLandscapePhoto(Location location) {
+		return new LandscapePhoto(location);
+	}
+
 	
 }
