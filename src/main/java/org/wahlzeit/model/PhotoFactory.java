@@ -86,6 +86,9 @@ public class PhotoFactory {
 		return new Photo(id);
 	}
 
+	/**
+	 * Creates a new photo with the specified location
+	 */
 	public Photo createPhoto(Location location) {
 		return new Photo(location);
 	}
