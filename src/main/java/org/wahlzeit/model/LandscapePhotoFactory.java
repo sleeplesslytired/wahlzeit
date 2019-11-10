@@ -29,7 +29,7 @@ public class LandscapePhotoFactory extends PhotoFactory {
 	 * Public singleton access method.
 	 */
 	public static synchronized LandscapePhotoFactory getInstance() {
-		if (this.instance == null) {
+		if (instance == null) {
 			log.config(LogBuilder.createSystemMessage().addAction("setting generic LandscapePhotoFactory").toString());
 			setInstance(new LandscapePhotoFactory());
 		}
