@@ -9,5 +9,9 @@ import static org.junit.Assert.assertTrue;
 
 
 public class LandscapePhotoFactoryTest {
-
+	
+	@Test
+	public void testGetInstanceOnNulledInstanceNotNull() {
+		assertTrue(LandscapePhotoFactory.getInstance() != null);
+	}
 }
