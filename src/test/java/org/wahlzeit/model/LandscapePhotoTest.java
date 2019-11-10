@@ -1,16 +1,22 @@
 package org.wahlzeit.model;
 
-import junit.framework.TestCase;
+import org.junit.Before;
 import org.junit.Test;
+import org.wahlzeit.services.EmailAddress;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 
-public class LandscapePhotoTest extends TestCase {
+public class LandscapePhotoTest {
 	
 	protected LandscapePhoto photo0;
 	protected LandscapePhoto photo1;
 
-	public LandscapePhotoTest(String name) {
-		super(name);
+	@Before
+	public void setup() throws Exception {
+		photo0 = new LandscapePhoto();
+		photo1 = new LandscapePhoto();
 	}
 
 	@Test
