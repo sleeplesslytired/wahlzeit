@@ -31,5 +31,10 @@ public class LandscapePhotoTest extends TestCase {
 		assertFalse(photo0.addLandscapeDescriptor(null));
 	}
 
+	@Test
+	public TestAddEmptyLandscapeDescriptor() {
+		assertFalse(photo0.addLandscapeDescriptor(""));
+	}
+
 
 }
