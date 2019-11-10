@@ -24,5 +24,13 @@ public class LandscapePhotoFactory extends PhotoFactory {
 
 		return instance;
 	}
+
+	protected static synchronized void setInstance(LandscapePhotoFactory landscapePhotoFactory ) {
+		if (instance != null) {
+			throw new IllegalStateException("attempt to initialize LandscapePhotoFactory twice");
+		}
+
+		instance = landscapePhotoFactory;
+	}
 	
 }
