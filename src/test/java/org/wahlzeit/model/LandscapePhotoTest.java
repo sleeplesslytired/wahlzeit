@@ -13,5 +13,10 @@ public class LandscapePhotoTest extends TestCase {
 		super(name);
 	}
 
+	@Test
+	public TestAddValidLandscapeDescriptorFirst() {
+		assertTrue(photo0.addLandscapeDescriptor("Forest"));
+	}
+
 
 }
