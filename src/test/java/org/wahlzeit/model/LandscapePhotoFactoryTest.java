@@ -14,4 +14,10 @@ public class LandscapePhotoFactoryTest {
 	public void testGetInstanceOnNulledInstanceNotNull() {
 		assertTrue(LandscapePhotoFactory.getInstance() != null);
 	}
+
+	@Test
+	public void testGetInstanceOnInitializedInstanceNotNull() {
+		LandscapePhotoFactory.initialize();
+		assertTrue(LandscapePhotoFactory.getInstance() != null);
+	}
 }
