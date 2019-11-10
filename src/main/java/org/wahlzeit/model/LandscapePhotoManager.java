@@ -14,6 +14,6 @@ public class LandscapePhotoManager extends PhotoManager {
 	 */
 	protected static final PhotoManager instance = new LandscapePhotoManager();
 
-	private static final Logger log = Logger.getLogger(PhotoManager.class.getName());
+	private static final Logger log = Logger.getLogger(LandscapePhotoManager.class.getName());
 
 }
