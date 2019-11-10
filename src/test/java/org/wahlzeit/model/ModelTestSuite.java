@@ -15,7 +15,8 @@ import org.wahlzeit.model.*;
 					 TagsTest.class,
 					 UserStatusTest.class,
 					 ValueTest.class,
-					 LandscapePhotoTest.class})
+					 LandscapePhotoTest.class,
+					 LandscapePhotoFactoryTest.class})
 public class ModelTestSuite {
 
 }
