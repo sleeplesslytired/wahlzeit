@@ -86,6 +86,10 @@ public class PhotoFactory {
 		return new Photo(id);
 	}
 
+	public Photo createPhoto(Location location) {
+		return new Photo(location);
+	}
+
 	/**
 	 * Loads a photo. The Java object is loaded from the Google Datastore, the Images in all sizes are loaded from the
 	 * Google Cloud storage.
