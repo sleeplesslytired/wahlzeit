@@ -3,6 +3,8 @@ package org.wahlzeit.model;
 import org.wahlzeit.model.PhotoManager;
 
 import java.util.logging.Logger;
+import java.util.Map;
+import java.util.HashMap;
 
 
 public class LandscapePhotoManager extends PhotoManager {
