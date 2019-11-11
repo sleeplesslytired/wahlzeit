@@ -6,12 +6,12 @@ import org.wahlzeit.testEnvironmentProvider.*;
 
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({LocalDatastoreServiceTestConfigProvider.class,
-					 RegisteredOfyEnvironmentProvider.class,
-					 SysConfigProvider.class,
-					 UserServiceProvider.class,
-					 UserSessionProvider.class,
-					 WebFormHandlerProvider.class})
+@Suite.SuiteClasses({/*LocalDatastoreServiceTestConfigProvider.class,*/
+					 /*RegisteredOfyEnvironmentProvider.class,*/
+					 /*SysConfigProvider.class,*/
+					 /*UserServiceProvider.class,*/
+					 /*UserSessionProvider.class,*/
+					 /*WebFormHandlerProvider.class*/})
 public class TestEnvironmentProviderTestSuite {
 
 }
