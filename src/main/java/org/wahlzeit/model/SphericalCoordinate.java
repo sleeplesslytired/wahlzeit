@@ -75,6 +75,18 @@ public class SphericalCoordinate implements Coordinate {
 	}
 
 	public boolean isEqual(SphericalCoordinate coordinate) {
+		if (this.radius != coordinate.getRadius()) {
+			return false;
+		}
+
+		if (this.theta != coordinate.getTheta()) {
+			return false;
+		}
+
+		if (this.phi != coordinate.getPhi()) {
+			return false;
+		}
+
 		return false;
 	}
 
