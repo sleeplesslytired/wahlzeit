@@ -49,6 +49,10 @@ public class CartesianCoordinate implements Coordinate {
 		return Math.sqrt(xRes + yRes + zRes);
 	}
 
+	public double getCentralAngle(Coordinate coordinate) {
+		return asSpherical().getCentralAngle(coordinate);
+	}
+
 	public SphericalCoordinate asSpherical() {
 		double radius = doCalculateSphericalRadius();
 		double theta = doCalculateSphericalTheta();
