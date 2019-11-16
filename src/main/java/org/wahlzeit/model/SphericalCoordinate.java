@@ -46,15 +46,19 @@ public class SphericalCoordinate implements Coordinate {
 
 	@Override
 	public boolean equals(Object o) {
-		if (! (o instanceof SphericalCoordinate)) {
+		if (! (o instanceof Coordinate)) {
 			return false;
 		}
 
-		return isEqual((SphericalCoordinate) o);
+		return isEqual((SphericalCoordinate) o.asSpherical());
 	} 
 
 	public boolean isEqual(Coordinate coordinate) {
 		return false;
+	}
+
+	public boolean isEqual(SphericalCoordinate coordinate) {
+		return false
 	}
 
 	@Override
