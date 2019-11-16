@@ -10,6 +10,9 @@ public class SphericalCoordinate implements Coordinate {
 	private final double phi;
 	private final double radius;
 
+	/**
+	 *
+	 */
 	public SphericalCoordinate(double theta, double phi, double radius) {
 		this.theta = theta;
 		this.phi = phi;
@@ -49,8 +52,8 @@ public class SphericalCoordinate implements Coordinate {
 		if (! (o instanceof Coordinate)) {
 			return false;
 		}
-
-		return isEqual((SphericalCoordinate) o.asSpherical());
+		Coordinate coordinate = (Coordinate) o;
+		return isEqual(coordinate.asSpherical());
 	} 
 
 	public boolean isEqual(Coordinate coordinate) {
@@ -58,7 +61,7 @@ public class SphericalCoordinate implements Coordinate {
 	}
 
 	public boolean isEqual(SphericalCoordinate coordinate) {
-		return false
+		return false;
 	}
 
 	@Override
