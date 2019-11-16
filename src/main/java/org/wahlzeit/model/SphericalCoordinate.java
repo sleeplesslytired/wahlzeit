@@ -38,17 +38,12 @@ public class SphericalCoordinate implements Coordinate {
 	}
 
 	public double getCartesianDistance(Coordinate coordinate) {
-		return -1;
+		CartesianCoordinate thisAsCartesian = this.asCartesian();
+		return thisAsCartesian.getCartesianDistance(coordinate);
 	}
 
 	public SphericalCoordinate asSpherical() {
 		return this;
-	}
-
-	public double getSphericalDistance(Coordinate coordinate) {
-		CartesianCoordinate c0 = this.asCartesian();
-		CartesianCoordinate c1 = coordinate.asCartesian();
-		return c0.getCartesianDistance(c1);
 	}
 
 	@Override
