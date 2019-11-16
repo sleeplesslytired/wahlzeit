@@ -85,7 +85,8 @@ public class CartesianCoordinate implements Coordinate {
 	}
 
 	public double getSphericalDistance(Coordinate coordinate) {
-		return -1;
+		SphericalCoordinate thisAsSpherical = this.asSpherical();
+		return thisAsSpherical().getSphericalDistance(coordinate);
 	}
 
 	@Override
