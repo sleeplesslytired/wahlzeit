@@ -40,22 +40,6 @@ public class CartesianCoordinate implements Coordinate {
 		return Math.sqrt(xRes + yRes + zRes);
 	}
 
-	public boolean isEqual(CartesianCoordinate coordinate) {
-		if (this.x != coordinate.getX()) {
-			return false;
-		}
-
-		if (this.y != coordinate.getY()) {
-			return false;
-		}
-
-		if (this.z != coordinate.getZ()) {
-			return false;
-		}
-
-		return true;
-	}
-	
 	@Override
 	public boolean equals(Object o) {
 		if (! (o instanceof CartesianCoordinate)) {
@@ -99,4 +83,20 @@ public class CartesianCoordinate implements Coordinate {
 		return false;
 	}
 
+	public boolean isEqual(CartesianCoordinate coordinate) {
+		if (this.x != coordinate.getX()) {
+			return false;
+		}
+
+		if (this.y != coordinate.getY()) {
+			return false;
+		}
+
+		if (this.z != coordinate.getZ()) {
+			return false;
+		}
+
+		return true;
+	}
+	
 }
