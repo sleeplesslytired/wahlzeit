@@ -3,7 +3,7 @@ package org.wahlzeit.model;
 
 import java.lang.Math;
 
-public class CartesianCoordinate {
+public class CartesianCoordinate implements Coordinate {
 
 	/**
 	 * all three values triangulate the coordiante
@@ -77,6 +77,26 @@ public class CartesianCoordinate {
 		tmp = Double.doubleToLongBits(z);
 		result = prime * result + (int) (tmp ^ (tmp >>> 32));
 		return result;
+	}
+
+	public CartesianCoordinate asCartesian() {
+		return null;
+	}
+
+	public double getCartesianDistance(Coordinate coordinate) {
+		return -1;
+	}
+
+	public SphericalCoordinate asSpherical() {
+		return null;
+	}
+
+	public double getSphericalDistance(Coordinate coordinate) {
+		return -1;
+	}
+
+	public boolean isEqual(Coordinate coordinate) {
+		return false;
 	}
 
 }
