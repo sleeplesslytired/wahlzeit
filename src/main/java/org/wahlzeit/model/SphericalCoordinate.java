@@ -16,6 +16,18 @@ public class SphericalCoordinate implements Coordinate {
 		this.r = r;
 	}
 
+	public double getTheta() {
+		return this.theta;
+	}
+
+	public double getPhi() {
+		return this.phi;
+	}
+
+	public double getR() {
+		return this.r;
+	}
+
 	public CartesianCoordinate asCartesian() {
 		return null;
 	}
