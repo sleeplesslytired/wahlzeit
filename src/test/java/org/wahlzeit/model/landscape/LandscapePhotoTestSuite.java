@@ -2,8 +2,7 @@ package org.wahlzeit.model.landscape;
 
 import org.junit.runners.Suite;
 import org.junit.runner.RunWith;
-import org.wahlzeit.model.persistence.PersistenceTestSuite;
-import org.wahlzeit.model.*;
+import org.wahlzeit.model.landscape.*;
 
 
 @RunWith(Suite.class)

@@ -3,7 +3,7 @@ package org.wahlzeit.model;
 import org.junit.runners.Suite;
 import org.junit.runner.RunWith;
 import org.wahlzeit.model.persistence.PersistenceTestSuite;
-import org.wahlzeit.model.*;
+import org.wahlzeit.model.landscape.LandscapePhotoTestSuite;
 
 
 @RunWith(Suite.class)
@@ -15,8 +15,7 @@ import org.wahlzeit.model.*;
 					 TagsTest.class,
 					 UserStatusTest.class,
 					 ValueTest.class,
-					 LandscapePhotoTest.class,
-					 LandscapePhotoFactoryTest.class})
+					 LandscapePhotoTestSuite.class})
 public class ModelTestSuite {
 
 }
