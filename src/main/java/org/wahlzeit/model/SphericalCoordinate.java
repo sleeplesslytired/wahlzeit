@@ -58,6 +58,23 @@ public class SphericalCoordinate implements Coordinate {
 		return thisAsCartesian.getCartesianDistance(coordinate);
 	}
 
+	public double getCentralAngle(Coordinate coordinate) {
+		return doGetCentralAngle(coordinate.asSpherical());
+	}
+
+	private double doGetCentralAngle(SphericalCoordinate coordinate) {
+		double arg = 0.;
+		double deltaPhi = Math.abs(this.phi - coordinate.getPhi()); 
+		double deltaTheta = Math.abs(this.theta - coordinate.getTheta());
+
+		arg += Math.pow(Math.sin(deltaPhi / 2), 2);
+		arg += Math.cos(this.getPhi()) *
+			   Math.cos(coordinate.getPhi()) *
+			   Math.pow((deltaTheta / 2), 2);
+		
+		return 2 * Math.asin(Math.sqrt(arg));
+	}
+
 	public SphericalCoordinate asSpherical() {
 		return this;
 	}
