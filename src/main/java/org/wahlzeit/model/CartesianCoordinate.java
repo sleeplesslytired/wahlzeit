@@ -3,7 +3,7 @@ package org.wahlzeit.model;
 
 import java.lang.Math;
 
-public class Coordinate {
+public class CartesianCoordinate {
 
 	/**
 	 * all three values triangulate the coordiante
@@ -15,7 +15,7 @@ public class Coordinate {
 	/**
 	 *
 	 */
-	public Coordinate(double x, double y, double z) {
+	public CartesianCoordinate(double x, double y, double z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
@@ -33,14 +33,14 @@ public class Coordinate {
 		return this.z;
 	}
 
-	public double getDistance(Coordinate endpoint) {
+	public double getDistance(CartesianCoordinate endpoint) {
 		double xRes = Math.pow(this.x - endpoint.getX(), 2);
 		double yRes = Math.pow(this.y - endpoint.getY(), 2);
 		double zRes = Math.pow(this.z - endpoint.getZ(), 2);
 		return Math.sqrt(xRes + yRes + zRes);
 	}
 
-	public boolean isEqual(Coordinate coordinate) {
+	public boolean isEqual(CartesianCoordinate coordinate) {
 		if (this.x != coordinate.getX()) {
 			return false;
 		}
@@ -58,11 +58,11 @@ public class Coordinate {
 	
 	@Override
 	public boolean equals(Object o) {
-		if (! (o instanceof Coordinate)) {
+		if (! (o instanceof CartesianCoordinate)) {
 			return false;
 		}
 
-		return isEqual((Coordinate) o);
+		return isEqual((CartesianCoordinate) o);
 	} 
 
 	@Override
