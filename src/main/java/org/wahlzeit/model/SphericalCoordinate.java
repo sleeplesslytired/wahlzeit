@@ -48,4 +48,18 @@ public class SphericalCoordinate implements Coordinate {
 		return false;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long tmp;
+		tmp = Double.doubleToLongBits(this.radius);
+		result = prime * result + (int) (tmp ^ (tmp >>> 32));
+		tmp = Double.doubleToLongBits(this.theta);
+		result = prime * result + (int) (tmp ^ (tmp >>> 32));
+		tmp = Double.doubleToLongBits(this.phi);
+		result = prime * result + (int) (tmp ^ (tmp >>> 32));
+		return result;
+	}
+
 }
