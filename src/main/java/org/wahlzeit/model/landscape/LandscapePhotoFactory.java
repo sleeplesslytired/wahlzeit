@@ -1,5 +1,6 @@
-package org.wahlzeit.model;
+package org.wahlzeit.model.landscape;
 
+import org.wahlzeit.model.*;
 import org.wahlzeit.services.LogBuilder;
 
 import java.util.logging.Logger;

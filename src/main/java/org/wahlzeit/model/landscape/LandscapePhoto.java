@@ -1,7 +1,7 @@
-package org.wahlzeit.model;
+package org.wahlzeit.model.landscape;
 
 import com.googlecode.objectify.annotation.Entity;
-import org.wahlzeit.model.Photo;
+import org.wahlzeit.model.*;
 import java.util.List;
 import java.util.LinkedList;
 

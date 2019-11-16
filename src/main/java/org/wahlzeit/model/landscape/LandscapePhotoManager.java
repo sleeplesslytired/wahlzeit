@@ -1,6 +1,6 @@
-package org.wahlzeit.model;
+package org.wahlzeit.model.landscape;
 
-import org.wahlzeit.model.PhotoManager;
+import org.wahlzeit.model.*;
 
 import java.util.logging.Logger;
 import java.util.Map;
@@ -12,7 +12,7 @@ public class LandscapePhotoManager extends PhotoManager {
 	/**
 	 *
 	 */
-	protected static final PhotoManager instance = new LandscapePhotoManager();
+	protected static final LandscapePhotoManager instance = new LandscapePhotoManager();
 
 	private static final Logger log = Logger.getLogger(LandscapePhotoManager.class.getName());
 
