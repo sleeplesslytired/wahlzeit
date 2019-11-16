@@ -34,7 +34,23 @@ public class SphericalCoordinate implements Coordinate {
 	}
 
 	public CartesianCoordinate asCartesian() {
-		return null;
+		double x = doCalculateCartesianX();
+		double y = doCalculateCartesianY();
+		double z = doCalculateCartesianZ();
+
+		return new CartesianCoordinate(x, y, z);
+	}
+
+	private double doCalculateCartesianX() {
+		return this.radius * Math.sin(this.theta) * Math.cos(this.phi);
+	}
+
+	private double doCalculateCartesianY() {
+		return this.radius * Math.sin(this.theta) * Math.sin(this.phi);
+	}
+
+	private double doCalculateCartesianZ() {
+		return this.radius * Math.cos(this.theta);
 	}
 
 	public double getCartesianDistance(Coordinate coordinate) {
