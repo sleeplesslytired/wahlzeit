@@ -33,23 +33,55 @@ public class CartesianCoordinate implements Coordinate {
 		return this.z;
 	}
 
-	public double getDistance(CartesianCoordinate endpoint) {
+	public CartesianCoordinate asCartesian() {
+		return this;
+	}
+
+	public double getCartesianDistance(Coordinate coordinate) {
+		CartesianCoordinate endpoint = coordinate.asCartesian();
+		return doGetDistance(endpoint);
+	}
+
+	private double doGetDistance(CartesianCoordinate endpoint) {
 		double xRes = Math.pow(this.x - endpoint.getX(), 2);
 		double yRes = Math.pow(this.y - endpoint.getY(), 2);
 		double zRes = Math.pow(this.z - endpoint.getZ(), 2);
 		return Math.sqrt(xRes + yRes + zRes);
 	}
 
-	public CartesianCoordinate asCartesian() {
-		return this;
-	}
-
-	public double getCartesianDistance(Coordinate coordinate) {
-		return -1;
-	}
-
 	public SphericalCoordinate asSpherical() {
-		return null;
+		double radius = doCalculateSphericalRadius();
+		double theta = doCalculateSphericalTheta();
+		double phi = doCalculateSphericalPhi();
+
+		return new SphericalCoordinate(theta, phi, radius);
+	}
+
+	private double doCalculateSphericalRadius() {
+		return Math.sqrt(Math.pow(this.x, 2) +
+						 Math.pow(this.y, 2) +
+						 Math.pow(this.z, 2)); 
+	}
+
+	private double doCalculateSphericalTheta() {
+		double res = 0;
+		if (this.x == 0) {
+			res = Math.PI / 2; 
+		} else {
+			res = Math.atan(this.y / this.x);
+		}
+		return res;
+	}
+
+	private double doCalculateSphericalPhi() {
+		double res = 0;
+		double radius = doCalculateSphericalRadius();
+		if (radius == 0) {
+			res = Double.MAX_VALUE;
+		} else {
+			res = Math.acos(this.z / radius);
+		}
+		return res;
 	}
 
 	public double getSphericalDistance(Coordinate coordinate) {
