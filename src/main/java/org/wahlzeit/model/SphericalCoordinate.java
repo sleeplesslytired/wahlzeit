@@ -8,12 +8,12 @@ public class SphericalCoordinate implements Coordinate {
 	 */
 	private final double theta;
 	private final double phi;
-	private final double r;
+	private final double radius;
 
-	public SphericalCoordinate(double theta, double phi, double r) {
+	public SphericalCoordinate(double theta, double phi, double radius) {
 		this.theta = theta;
 		this.phi = phi;
-		this.r = r;
+		this.radius = radius;
 	}
 
 	public double getTheta() {
@@ -24,8 +24,8 @@ public class SphericalCoordinate implements Coordinate {
 		return this.phi;
 	}
 
-	public double getR() {
-		return this.r;
+	public double getRadius() {
+		return this.radius;
 	}
 
 	public CartesianCoordinate asCartesian() {
