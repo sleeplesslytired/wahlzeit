@@ -56,7 +56,7 @@ public class SphericalCoordinate implements Coordinate {
 		if (! (o instanceof Coordinate)) {
 			return false;
 		}
-		return isEqual((coordinate) o);
+		return isEqual((Coordinate) o);
 	} 
 
 	public boolean isEqual(Coordinate coordinate) {
