@@ -93,12 +93,11 @@ public class CartesianCoordinate implements Coordinate {
 		if (! (o instanceof Coordinate)) {
 			return false;
 		}
-		Coordinate coordinate = (Coordinate) o;
-		return isEqual(coordinate.asCartesian());
+		return isEqual((Coordinate) o);
 	} 
 
 	public boolean isEqual(Coordinate coordinate) {
-		return false;
+		return isEqual(coordinate.asCartesian());
 	}
 
 	public boolean isEqual(CartesianCoordinate coordinate) {
