@@ -1,6 +1,8 @@
 package org.wahlzeit.model;
 
 
+import java.lang.Math;
+
 public class SphericalCoordinate implements Coordinate {
 
 	/**
@@ -40,11 +42,13 @@ public class SphericalCoordinate implements Coordinate {
 	}
 
 	public SphericalCoordinate asSpherical() {
-		return null;
+		return this;
 	}
 
 	public double getSphericalDistance(Coordinate coordinate) {
-		return -1;
+		CartesianCoordinate c0 = this.asCartesian();
+		CartesianCoordinate c1 = coordinate.asCartesian();
+		return c0.getCartesianDistance(c1);
 	}
 
 	@Override
@@ -52,12 +56,11 @@ public class SphericalCoordinate implements Coordinate {
 		if (! (o instanceof Coordinate)) {
 			return false;
 		}
-		Coordinate coordinate = (Coordinate) o;
-		return isEqual(coordinate.asSpherical());
+		return isEqual((coordinate) o);
 	} 
 
 	public boolean isEqual(Coordinate coordinate) {
-		return false;
+		return isEqual(coordinate.asSpherical());
 	}
 
 	public boolean isEqual(SphericalCoordinate coordinate) {
