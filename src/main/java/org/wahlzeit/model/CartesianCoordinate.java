@@ -41,7 +41,7 @@ public class CartesianCoordinate implements Coordinate {
 	}
 
 	public CartesianCoordinate asCartesian() {
-		return null;
+		return this;
 	}
 
 	public double getCartesianDistance(Coordinate coordinate) {
