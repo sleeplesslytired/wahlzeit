@@ -40,15 +40,6 @@ public class CartesianCoordinate implements Coordinate {
 		return Math.sqrt(xRes + yRes + zRes);
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (! (o instanceof CartesianCoordinate)) {
-			return false;
-		}
-
-		return isEqual((CartesianCoordinate) o);
-	} 
-
 	public CartesianCoordinate asCartesian() {
 		return null;
 	}
@@ -64,6 +55,15 @@ public class CartesianCoordinate implements Coordinate {
 	public double getSphericalDistance(Coordinate coordinate) {
 		return -1;
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (! (o instanceof CartesianCoordinate)) {
+			return false;
+		}
+
+		return isEqual((CartesianCoordinate) o);
+	} 
 
 	public boolean isEqual(Coordinate coordinate) {
 		return false;
