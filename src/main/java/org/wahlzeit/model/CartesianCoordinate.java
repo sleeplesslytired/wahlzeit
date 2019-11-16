@@ -61,8 +61,8 @@ public class CartesianCoordinate implements Coordinate {
 		if (! (o instanceof Coordinate)) {
 			return false;
 		}
-
-		return isEqual((Coordinate) o.asCartesian());
+		Coordinate coordinate = (Coordinate) o;
+		return isEqual(coordinate.asCartesian());
 	} 
 
 	public boolean isEqual(Coordinate coordinate) {
