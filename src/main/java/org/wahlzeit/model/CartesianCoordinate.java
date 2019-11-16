@@ -84,11 +84,6 @@ public class CartesianCoordinate implements Coordinate {
 		return res;
 	}
 
-	public double getSphericalDistance(Coordinate coordinate) {
-		SphericalCoordinate thisAsSpherical = this.asSpherical();
-		return thisAsSpherical().getSphericalDistance(coordinate);
-	}
-
 	@Override
 	public boolean equals(Object o) {
 		if (! (o instanceof Coordinate)) {

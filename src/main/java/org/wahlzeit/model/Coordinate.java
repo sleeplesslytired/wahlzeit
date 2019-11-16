@@ -8,7 +8,5 @@ public interface Coordinate {
 
 	public SphericalCoordinate asSpherical();
 
-	public double getSphericalDistance(Coordinate coordinate);
-
 	public boolean isEqual(Coordinate coordinate);
 }
