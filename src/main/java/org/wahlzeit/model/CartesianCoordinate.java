@@ -58,11 +58,11 @@ public class CartesianCoordinate implements Coordinate {
 
 	@Override
 	public boolean equals(Object o) {
-		if (! (o instanceof CartesianCoordinate)) {
+		if (! (o instanceof Coordinate)) {
 			return false;
 		}
 
-		return isEqual((CartesianCoordinate) o);
+		return isEqual((Coordinate) o.asCartesian());
 	} 
 
 	public boolean isEqual(Coordinate coordinate) {

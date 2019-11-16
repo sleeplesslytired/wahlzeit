@@ -44,6 +44,15 @@ public class SphericalCoordinate implements Coordinate {
 		return -1;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (! (o instanceof SphericalCoordinate)) {
+			return false;
+		}
+
+		return isEqual((SphericalCoordinate) o);
+	} 
+
 	public boolean isEqual(Coordinate coordinate) {
 		return false;
 	}
