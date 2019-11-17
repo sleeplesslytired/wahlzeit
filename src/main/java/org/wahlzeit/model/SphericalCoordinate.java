@@ -105,7 +105,7 @@ public class SphericalCoordinate implements Coordinate {
 			return false;
 		}
 
-		return false;
+		return true;
 	}
 
 	@Override
