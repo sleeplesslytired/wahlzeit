@@ -22,30 +22,41 @@ public class CartesianCoordinateTest {
 		cartesianCoordinate0 = new CartesianCoordinate(10., -5., 0.);
 		cartesianCoordinate1 = new CartesianCoordinate(-5., -10., 0.5);
 		sphericalCoordinate = new SphericalCoordinate(45., 0., 36.);
-		epsilon = 2;
+		epsilon = 0.1;
 	}
 
 	@Test
 	public void testCartesianDistanceOtherCartesian0() {
-		assertTrue(Math.abs(cartesianCoordinate0.getCartesianDistance(cartesianCoordinate1) - 15.) < epsilon);
+		assertTrue(Math.abs(cartesianCoordinate0.getCartesianDistance(cartesianCoordinate1) - 15.8193) < epsilon);
 	}
 
 	@Test
 	public void testCartesianDistanceOtherCartesian1() {
-		assertTrue(Math.abs(cartesianCoordinate1.getCartesianDistance(cartesianCoordinate0) - 15.) < epsilon);
+		assertTrue(Math.abs(cartesianCoordinate1.getCartesianDistance(cartesianCoordinate0) - 15.8193) < epsilon);
 	}
 
 	@Test
 	public void testCartesianDistanceSpherical() {
-		assertTrue(Math.abs(cartesianCoordinate0.getCartesianDistance(sphericalCoordinate) - 28) < epsilon);
+		assertTrue(Math.abs(cartesianCoordinate0.getCartesianDistance(sphericalCoordinate) - 28.4315) < epsilon);
 	}
 
 	@Test
 	public void testAsSpherical() {
 		SphericalCoordinate sphericalCoordinate = cartesianCoordinate0.asSpherical();
-		assertTrue(Math.abs(sphericalCoordinate.getTheta() - Math.PI / 2) < 4);
-		assertTrue(Math.abs(sphericalCoordinate.getPhi() - (-1) * Math.atan(1/2)) < epsilon);
+		assertTrue(Math.abs(sphericalCoordinate.getTheta() - Math.PI / 2) < epsilon);
+		assertTrue(Math.abs(sphericalCoordinate.getPhi() - (-0.4636)) < epsilon);
 		assertTrue(Math.abs(sphericalCoordinate.getRadius() - 5 * Math.sqrt(5)) < epsilon);
+	}
+
+	@Test
+	public void testNotEquals() {
+		assertFalse(cartesianCoordinate0.equals(cartesianCoordinate1));
+	}
+
+	@Test
+	public void testEquals() {
+		SphericalCoordinate sphericalCoordinate = cartesianCoordinate0.asSpherical();
+		assertTrue(cartesianCoordinate0.equals(sphericalCoordinate));
 	}
 
 }
