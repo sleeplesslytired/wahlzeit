@@ -26,6 +26,14 @@ public class SphericalCoordinateTest {
 	}
 
 	@Test
+	public void testAsCartesian() {
+		CartesianCoordinate asCartesian = sphericalCoordinate1.asCartesian();
+		assertTrue(Math.abs(asCartesian.getX() + 15.2890) < epsilon);
+		assertTrue(Math.abs(asCartesian.getY() + 4.1571) < epsilon);
+		assertTrue(Math.abs(asCartesian.getZ() - 88.5943) < epsilon);
+	}
+
+	@Test
 	public void testCartesianDistance() {
 		assertTrue(Math.abs(sphericalCoordinate0.getCartesianDistance(cartesianCoordinate) - 119.3847) < epsilon);
 	}
