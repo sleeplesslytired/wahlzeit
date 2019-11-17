@@ -11,6 +11,7 @@ public class SphericalCoordinate implements Coordinate {
 	private final double theta;
 	private final double phi;
 	private final double radius;
+	private final double epsilon = 0.1;
 
 	/**
 	 *
@@ -92,15 +93,15 @@ public class SphericalCoordinate implements Coordinate {
 	}
 
 	public boolean isEqual(SphericalCoordinate coordinate) {
-		if (this.radius != coordinate.getRadius()) {
+		if (Math.abs(this.radius - coordinate.getRadius()) >= this.epsilon) {
 			return false;
 		}
 
-		if (this.theta != coordinate.getTheta()) {
+		if (Math.abs(this.theta - coordinate.getTheta()) >= this.epsilon) {
 			return false;
 		}
 
-		if (this.phi != coordinate.getPhi()) {
+		if (Math.abs(this.phi - coordinate.getPhi()) >= this.epsilon) {
 			return false;
 		}
 
