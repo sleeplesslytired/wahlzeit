@@ -15,7 +15,7 @@ public class SphericalCoordinateTest {
 	protected SphericalCoordinate sphericalCoordinate0;
 	protected SphericalCoordinate sphericalCoordinate1;
 	protected CartesianCoordinate cartesianCoordinate;
-	protected double epsilon;
+	protected double epsilon = 0.1;
 
 	@Before
 	public void setup() {
@@ -38,4 +38,14 @@ public class SphericalCoordinateTest {
 		assertTrue(Math.abs(sphericalCoordinate0.getCartesianDistance(cartesianCoordinate) - 119.3847) < epsilon);
 	}
 
+	@Test
+	public void testNotEquals() {
+		assertFalse(sphericalCoordinate0.equals(sphericalCoordinate1));
+	}
+
+	@Test
+	public void testEquals() {
+		SphericalCoordinate sphericalCoordinate = new SphericalCoordinate(45., 0., 36.);
+		assertTrue(sphericalCoordinate0.equals(sphericalCoordinate));
+	}
 }
