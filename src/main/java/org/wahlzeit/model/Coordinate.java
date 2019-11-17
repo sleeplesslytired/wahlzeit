@@ -8,5 +8,7 @@ public interface Coordinate {
 
 	public SphericalCoordinate asSpherical();
 
+	public double getCentralAngle(Coordinate coordinate);
+
 	public boolean isEqual(Coordinate coordinate);
 }
