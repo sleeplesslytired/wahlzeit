@@ -11,6 +11,7 @@ public class CartesianCoordinate implements Coordinate {
 	private final double x;	
 	private final double y;
 	private final double z;
+	private final double epsilon = 0.1;
 
 	/**
 	 *
@@ -69,23 +70,17 @@ public class CartesianCoordinate implements Coordinate {
 
 	private double doCalculateSphericalTheta() {
 		double res = 0;
-		if (this.x == 0) {
-			res = Math.PI / 2; 
+		double radius = doCalculateSphericalRadius();
+		if (radius == 0) {
+			res = Double.MAX_VALUE; 
 		} else {
-			res = Math.atan(this.y / this.x);
+			res = Math.acos(this.z / radius);
 		}
 		return res;
 	}
 
 	private double doCalculateSphericalPhi() {
-		double res = 0;
-		double radius = doCalculateSphericalRadius();
-		if (radius == 0) {
-			res = Double.MAX_VALUE;
-		} else {
-			res = Math.acos(this.z / radius);
-		}
-		return res;
+		return Math.atan2(y, x);
 	}
 
 	@Override
@@ -101,15 +96,15 @@ public class CartesianCoordinate implements Coordinate {
 	}
 
 	public boolean isEqual(CartesianCoordinate coordinate) {
-		if (this.x != coordinate.getX()) {
+		if (Math.abs(this.x - coordinate.getX()) >= this.epsilon) {
 			return false;
 		}
 
-		if (this.y != coordinate.getY()) {
+		if (Math.abs(this.y - coordinate.getY()) >= this.epsilon) {
 			return false;
 		}
 
-		if (this.z != coordinate.getZ()) {
+		if (Math.abs(this.z - coordinate.getZ()) >= this.epsilon) {
 			return false;
 		}
 
