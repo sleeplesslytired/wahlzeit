@@ -88,7 +88,7 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		return isEqual(coordinate.asSpherical());
 	} 
 
-	public double[] doGetCoordinates() {
+	public double[] getCoordinatesAsArray() {
 		double[] res = {this.theta, this.phi, this.radius};
 		return res;
 	}

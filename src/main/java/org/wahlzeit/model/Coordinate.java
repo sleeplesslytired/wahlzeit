@@ -12,5 +12,5 @@ public interface Coordinate {
 
 	public boolean isEqual(Coordinate coordinate);
 
-	public double[] doGetCoordinates();
+	public double[] getCoordinatesAsArray();
 }

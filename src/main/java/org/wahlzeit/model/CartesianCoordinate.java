@@ -91,7 +91,7 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		return isEqual(coordinate.asCartesian());
 	} 
 
-	public double[] doGetCoordinates() {
+	public double[] getCoordinatesAsArray() {
 		double[] res = {this.x, this.y, this.z};
 		return res;
 	}
