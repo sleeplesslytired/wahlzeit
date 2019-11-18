@@ -88,6 +88,11 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		return isEqual(coordinate.asSpherical());
 	} 
 
+	public double[] doGetCoordinates() {
+		double[] res = {this.theta, this.phi, this.radius};
+		return res;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -100,11 +105,6 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		tmp = Double.doubleToLongBits(this.phi);
 		result = prime * result + (int) (tmp ^ (tmp >>> 32));
 		return result;
-	}
-
-	public double[] doGetCoordinates() {
-		double[] res = {this.theta, this.phi, this.radius};
-		return res;
 	}
 
 }

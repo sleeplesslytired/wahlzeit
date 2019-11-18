@@ -90,6 +90,11 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		Coordinate coordinate = (Coordinate) o;
 		return isEqual(coordinate.asCartesian());
 	} 
+
+	public double[] doGetCoordinates() {
+		double[] res = {this.x, this.y, this.z};
+		return res;
+	}
 	
 	@Override
 	public int hashCode() {
@@ -103,11 +108,6 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		tmp = Double.doubleToLongBits(z);
 		result = prime * result + (int) (tmp ^ (tmp >>> 32));
 		return result;
-	}
-
-	public double[] doGetCoordinates() {
-		double[] res = {this.x, this.y, this.z};
-		return res;
 	}
 
 }
