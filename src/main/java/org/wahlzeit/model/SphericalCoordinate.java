@@ -3,7 +3,7 @@ package org.wahlzeit.model;
 
 import java.lang.Math;
 
-public class SphericalCoordinate implements Coordinate {
+public class SphericalCoordinate extends AbstractCoordinate {
 
 	/**
 	 * all three spherical coordinates
