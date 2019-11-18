@@ -29,4 +29,17 @@ abstract class AbstractCoordinate implements Coordinate {
 
 	abstract public double[] doGetCoordinates();
 
+	@Override
+	public final int hashCode() {
+		double[] coordinates = doGetCoordinates();
+		final int prime = 31;
+		int result = 1;
+		long tmp;
+		for (int i = 0; i < 3; i++) {
+			tmp = Double.doubleToLongBits(coordinates[i]);
+			result += prime * result + (int) (tmp ^ (tmp >>> 32));
+		}
+		return result;
+	}
+
 }
