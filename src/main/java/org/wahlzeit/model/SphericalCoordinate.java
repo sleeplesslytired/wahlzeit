@@ -84,28 +84,9 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		if (! (o instanceof Coordinate)) {
 			return false;
 		}
-		return isEqual((Coordinate) o);
-	} 
-
-	public boolean isEqual(Coordinate coordinate) {
+		Coordinate coordinate = (Coordinate) o;
 		return isEqual(coordinate.asSpherical());
-	}
-
-	public boolean isEqual(SphericalCoordinate coordinate) {
-		if (Math.abs(this.radius - coordinate.getRadius()) >= this.epsilon) {
-			return false;
-		}
-
-		if (Math.abs(this.theta - coordinate.getTheta()) >= this.epsilon) {
-			return false;
-		}
-
-		if (Math.abs(this.phi - coordinate.getPhi()) >= this.epsilon) {
-			return false;
-		}
-
-		return true;
-	}
+	} 
 
 	@Override
 	public int hashCode() {

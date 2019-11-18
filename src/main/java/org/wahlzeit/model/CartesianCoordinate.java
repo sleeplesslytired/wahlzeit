@@ -87,28 +87,9 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		if (! (o instanceof Coordinate)) {
 			return false;
 		}
-		return isEqual((Coordinate) o);
-	} 
-
-	public boolean isEqual(Coordinate coordinate) {
+		Coordinate coordinate = (Coordinate) o;
 		return isEqual(coordinate.asCartesian());
-	}
-
-	public boolean isEqual(CartesianCoordinate coordinate) {
-		if (Math.abs(this.x - coordinate.getX()) >= this.epsilon) {
-			return false;
-		}
-
-		if (Math.abs(this.y - coordinate.getY()) >= this.epsilon) {
-			return false;
-		}
-
-		if (Math.abs(this.z - coordinate.getZ()) >= this.epsilon) {
-			return false;
-		}
-
-		return true;
-	}
+	} 
 	
 	@Override
 	public int hashCode() {
