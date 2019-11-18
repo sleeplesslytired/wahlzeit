@@ -3,7 +3,7 @@ package org.wahlzeit.model;
 
 import java.lang.Math;
 
-public class CartesianCoordinate implements Coordinate {
+public class CartesianCoordinate extends AbstractCoordinate {
 
 	/**
 	 * all three values triangulate the coordiante
