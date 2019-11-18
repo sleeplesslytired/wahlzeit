@@ -121,4 +121,9 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		return result;
 	}
 
+	public double[] doGetCoordinates() {
+		double[] res = {this.theta, this.phi, this.radius};
+		return res;
+	}
+
 }

@@ -124,4 +124,9 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		return result;
 	}
 
+	public double[] doGetCoordinates() {
+		double[] res = {this.x, this.y, this.z};
+		return res;
+	}
+
 }

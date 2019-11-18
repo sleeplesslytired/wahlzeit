@@ -15,4 +15,6 @@ abstract class AbstractCoordinate implements Coordinate {
 
 	abstract public boolean isEqual(Coordinate coordinate);
 
+	abstract public double[] doGetCoordinates();
+
 }
