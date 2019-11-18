@@ -11,7 +11,6 @@ public class SphericalCoordinate extends AbstractCoordinate {
 	private final double theta;
 	private final double phi;
 	private final double radius;
-	private final double epsilon = 0.1;
 
 	/**
 	 *

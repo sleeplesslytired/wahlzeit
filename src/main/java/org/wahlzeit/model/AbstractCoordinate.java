@@ -3,6 +3,8 @@ package org.wahlzeit.model;
 
 abstract class AbstractCoordinate implements Coordinate {
 
+	protected final double epsilon = 0.1;
+
 	abstract public CartesianCoordinate asCartesian();
 
 	abstract public double getCartesianDistance(Coordinate coordinate);

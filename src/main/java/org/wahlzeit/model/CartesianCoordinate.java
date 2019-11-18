@@ -11,7 +11,6 @@ public class CartesianCoordinate extends AbstractCoordinate {
 	private final double x;	
 	private final double y;
 	private final double z;
-	private final double epsilon = 0.1;
 
 	/**
 	 *
