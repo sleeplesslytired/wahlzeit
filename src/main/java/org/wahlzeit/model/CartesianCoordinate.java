@@ -102,12 +102,15 @@ public class CartesianCoordinate extends AbstractCoordinate {
 
 	@Override
 	public boolean equals(Object o) {
+		if (o == null) {
+			return false;
+		}
 		if (! (o instanceof Coordinate)) {
 			return false;
 		}
 		Coordinate coordinate = (Coordinate) o;
 		return isEqual(coordinate.asCartesian());
-	} 
+	}
 
 	public double[] getCoordinatesAsArray() {
 		double[] res = {this.x, this.y, this.z};

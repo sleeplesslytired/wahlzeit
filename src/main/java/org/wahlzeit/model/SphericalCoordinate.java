@@ -81,6 +81,9 @@ public class SphericalCoordinate extends AbstractCoordinate {
 
 	@Override
 	public boolean equals(Object o) {
+		if (o == null) {
+			return false;
+		}
 		if (! (o instanceof Coordinate)) {
 			return false;
 		}
