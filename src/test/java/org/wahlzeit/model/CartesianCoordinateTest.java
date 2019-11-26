@@ -26,8 +26,8 @@ public class CartesianCoordinateTest {
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testInstacitateNullvector() {
-		CartesianCoordinate nullvector = new CartesianCoordinate(0., 0., 0.);
+	public void testInstancitateNullvector() {
+		CartesianCoordinate badCoordinate = new CartesianCoordinate(0., 0., 0.);
 	}
 
 	@Test
