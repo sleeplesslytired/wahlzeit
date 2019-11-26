@@ -68,8 +68,15 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		return thisAsCartesian.getCartesianDistance(coordinate);
 	}
 
-	public double getCentralAngle(Coordinate coordinate) {
-		return doGetCentralAngle(coordinate.asSpherical());
+	public double getCentralAngle(Coordinate coordinate)  throws IllegalArgumentException {
+		assertCoordinateNotNull(coordinate);
+		double res;
+		SphericalCoordinate asSpherical;
+
+		asSpherical = coordinate.asSpherical();
+		res = doGetCentralAngle(asSpherical);
+
+		return res;
 	}
 
 	private double doGetCentralAngle(SphericalCoordinate coordinate) {

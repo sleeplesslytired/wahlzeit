@@ -69,7 +69,7 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		}
 	}
 
-	public double getCentralAngle(Coordinate coordinate) {
+	public double getCentralAngle(Coordinate coordinate) throws IllegalArgumentException {
 		assertCoordinateNotNull(coordinate);
 		return asSpherical().getCentralAngle(coordinate);
 	}
