@@ -55,6 +55,12 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		return Math.sqrt(xRes + yRes + zRes);
 	}
 
+	final protected void assertNoNegativeDistance(double distance) {
+		if (distance < 0) {
+			throw new ArithmeticException("Coordinate: internal calculation error: negative distance");
+		}
+	}
+
 	public double getCentralAngle(Coordinate coordinate) {
 		return asSpherical().getCentralAngle(coordinate);
 	}
