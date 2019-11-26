@@ -42,4 +42,10 @@ abstract class AbstractCoordinate implements Coordinate {
 		return result;
 	}
 
+	protected final void assertCoordinateNotNull(Coordinate coordinate) throws IllegalArgumentException {
+		if (coordinate == null) {
+			throw new IllegalArgumentException("Received a null reference instead of a Coordinate");
+		}
+	}
+
 }
