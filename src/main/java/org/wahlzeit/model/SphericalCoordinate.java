@@ -21,6 +21,12 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		this.radius = radius;
 	}
 
+	final protected void assertLengthGreaterNull(double theta, double phi, double radius) throws IllegalArgumentException {
+		if (radius <= 0) {
+			throw new IllegalArgumentException("Cannot instancitate radius <= 0");
+		}
+	}
+
 	public double getTheta() {
 		return this.theta;
 	}
