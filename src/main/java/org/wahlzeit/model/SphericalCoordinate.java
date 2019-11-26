@@ -15,7 +15,8 @@ public class SphericalCoordinate extends AbstractCoordinate {
 	/**
 	 *
 	 */
-	public SphericalCoordinate(double theta, double phi, double radius) {
+	public SphericalCoordinate(double theta, double phi, double radius) throws IllegalArgumentException {
+		assertLengthGreaterNull(theta, phi, radius);
 		this.theta = theta;
 		this.phi = phi;
 		this.radius = radius;

@@ -25,6 +25,11 @@ public class SphericalCoordinateTest {
 		epsilon = 0.1;
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void testInstancitateIllegalRadiusVector() {
+		SphericalCoordinate badCoordinate = new SphericalCoordinate(0., 0., -.1);
+	}
+
 	@Test
 	public void testAsCartesian() {
 		CartesianCoordinate asCartesian = sphericalCoordinate1.asCartesian();

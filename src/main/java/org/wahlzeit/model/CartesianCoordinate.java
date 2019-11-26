@@ -74,7 +74,7 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		return asSpherical().getCentralAngle(coordinate);
 	}
 
-	public SphericalCoordinate asSpherical() {
+	public SphericalCoordinate asSpherical() throws IllegalArgumentException {
 		double radius = doCalculateSphericalRadius();
 		double theta = doCalculateSphericalTheta();
 		double phi = doCalculateSphericalPhi();
