@@ -20,6 +20,7 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		this.theta = theta;
 		this.phi = phi;
 		this.radius = radius;
+		assertClassInvariants();
 	}
 
 	final protected void assertLengthGreaterNull(double theta, double phi, double radius) throws IllegalArgumentException {

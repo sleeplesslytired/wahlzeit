@@ -8,6 +8,10 @@ abstract class AbstractCoordinate implements Coordinate {
 
 	protected final double epsilon = 0.1;
 
+	protected void assertClassInvariants() {
+
+	}
+
 	abstract public CartesianCoordinate asCartesian();
 
 	abstract public double getCartesianDistance(Coordinate coordinate);

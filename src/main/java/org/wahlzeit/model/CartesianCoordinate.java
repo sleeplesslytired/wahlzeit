@@ -20,6 +20,7 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		this.x = x;
 		this.y = y;
 		this.z = z;
+		assertClassInvariants();
 	}
 
 	final protected void assertNotNullvector(double x, double y, double z) throws IllegalArgumentException {
