@@ -15,7 +15,8 @@ public class CartesianCoordinate extends AbstractCoordinate {
 	/**
 	 *
 	 */
-	public CartesianCoordinate(double x, double y, double z) {
+	public CartesianCoordinate(double x, double y, double z) throws IllegalArgumentException {
+		assertNotNullvector(x, y, z);
 		this.x = x;
 		this.y = y;
 		this.z = z;
@@ -82,11 +83,8 @@ public class CartesianCoordinate extends AbstractCoordinate {
 	private double doCalculateSphericalTheta() {
 		double res = 0;
 		double radius = doCalculateSphericalRadius();
-		if (radius == 0) {
-			res = Double.MAX_VALUE; 
-		} else {
-			res = Math.acos(this.z / radius);
-		}
+
+		res = Math.acos(this.z / radius);
 		return res;
 	}
 

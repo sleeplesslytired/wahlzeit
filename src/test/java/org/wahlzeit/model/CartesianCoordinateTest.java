@@ -25,6 +25,11 @@ public class CartesianCoordinateTest {
 		epsilon = 0.1;
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void testInstacitateNullvector() {
+		CartesianCoordinate nullvector = new CartesianCoordinate(0., 0., 0.);
+	}
+
 	@Test
 	public void testCartesianDistanceOtherCartesian0() {
 		assertTrue(Math.abs(cartesianCoordinate0.getCartesianDistance(cartesianCoordinate1) - 15.8193) < epsilon);
