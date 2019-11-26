@@ -80,16 +80,27 @@ public class SphericalCoordinate extends AbstractCoordinate {
 	}
 
 	private double doGetCentralAngle(SphericalCoordinate coordinate) {
-		double arg = 0.;
-		double deltaPhi = Math.abs(this.phi - coordinate.getPhi()); 
-		double deltaTheta = Math.abs(this.theta - coordinate.getTheta());
+		double arg = doGetCentralAngleRootArgument(coordinate);
 
-		arg += Math.pow(Math.sin(deltaPhi / 2), 2);
+		return 2 * Math.asin(Math.sqrt(arg));
+	}
+
+	private double doGetCentralAngleRootArgument(SphericalCoordinate coordinate) {
+		double arg;
+		double deltaPhi, deltaTheta;
+
+		deltaPhi = Math.abs(this.phi - coordinate.getPhi()); 
+		deltaTheta = Math.abs(this.theta - coordinate.getTheta());
+		arg = Math.pow(Math.sin(deltaPhi / 2), 2);
 		arg += Math.cos(this.getPhi()) *
 			   Math.cos(coordinate.getPhi()) *
 			   Math.pow((deltaTheta / 2), 2);
+
+		if (arg < 0) {
+			throw new ArithmeticException("Calculating central angle would lead to a complex number, wich is not supported");
+		}
 		
-		return 2 * Math.asin(Math.sqrt(arg));
+		return arg;
 	}
 
 	public SphericalCoordinate asSpherical() {
