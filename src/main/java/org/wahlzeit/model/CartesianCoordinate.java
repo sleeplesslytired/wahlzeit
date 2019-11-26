@@ -21,6 +21,12 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		this.z = z;
 	}
 
+	final protected void assertNotNullvector(double x, double y, double z) throws IllegalArgumentException {
+		if (x == 0 && y == 0 && z == 0) {
+			throw new IllegalArgumentException("Cannot handle vector with length 0.");
+		}
+	}
+
 	public double getX() {
 		return this.x;
 	}
