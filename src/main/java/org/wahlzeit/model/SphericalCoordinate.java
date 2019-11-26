@@ -33,7 +33,7 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		return this.radius;
 	}
 
-	public CartesianCoordinate asCartesian() {
+	public CartesianCoordinate asCartesian() throws IllegalArgumentException {
 		double x = doCalculateCartesianX();
 		double y = doCalculateCartesianY();
 		double z = doCalculateCartesianZ();
