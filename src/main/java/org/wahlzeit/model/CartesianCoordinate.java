@@ -52,6 +52,7 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		endpoint = coordinate.asCartesian();
 		res = doGetDistance(endpoint);
 
+		assertNoNegativeDistance(res);
 		return res;
 	}
 
