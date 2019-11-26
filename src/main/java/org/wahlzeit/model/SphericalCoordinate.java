@@ -60,8 +60,11 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		return this.radius * Math.cos(this.theta);
 	}
 
-	public double getCartesianDistance(Coordinate coordinate) {
+	public double getCartesianDistance(Coordinate coordinate) throws IllegalArgumentException {
+		assertCoordinateNotNull(coordinate);
+
 		CartesianCoordinate thisAsCartesian = this.asCartesian();
+
 		return thisAsCartesian.getCartesianDistance(coordinate);
 	}
 
