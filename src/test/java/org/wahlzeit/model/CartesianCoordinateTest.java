@@ -45,6 +45,11 @@ public class CartesianCoordinateTest {
 		assertTrue(Math.abs(cartesianCoordinate0.getCartesianDistance(sphericalCoordinate) - 28.4315) < epsilon);
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void testCartesianDistanceNullArgument() {
+		cartesianCoordinate0.getCartesianDistance(null);
+	}
+
 	@Test
 	public void testAsSpherical() {
 		SphericalCoordinate sphericalCoordinate = cartesianCoordinate0.asSpherical();

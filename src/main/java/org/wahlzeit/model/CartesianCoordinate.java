@@ -45,8 +45,14 @@ public class CartesianCoordinate extends AbstractCoordinate {
 	}
 
 	public double getCartesianDistance(Coordinate coordinate) {
-		CartesianCoordinate endpoint = coordinate.asCartesian();
-		return doGetDistance(endpoint);
+		double res;
+		CartesianCoordinate endpoint;
+
+		assertCoordinateNotNull(coordinate);
+		endpoint = coordinate.asCartesian();
+		res = doGetDistance(endpoint);
+
+		return res;
 	}
 
 	private double doGetDistance(CartesianCoordinate endpoint) {
@@ -63,6 +69,7 @@ public class CartesianCoordinate extends AbstractCoordinate {
 	}
 
 	public double getCentralAngle(Coordinate coordinate) {
+		assertCoordinateNotNull(coordinate);
 		return asSpherical().getCentralAngle(coordinate);
 	}
 
