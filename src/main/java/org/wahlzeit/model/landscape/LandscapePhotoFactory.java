@@ -71,6 +71,26 @@ public class LandscapePhotoFactory extends PhotoFactory {
 	}
 
 	/**
+	 * Creates a new photo with a location, specified via its cartesian coordinates
+	 */
+	public LandscapePhoto createLandscapePhotoCartesianCoordinates(double x,
+																   double y,
+																   double z)
+																   throws IllegalArgumentException {
+		LandscapePhoto res;
+		Location location;
+
+		try {
+			location = Location.createCartesianDefinedLocation(x, y, z);
+			res = new LandscapePhoto(location);
+		} catch (IllegalArgumentException iae) {
+			throw new IllegalArgumentException("LandscapePhoto could not be created, due to a location described by the cartesian coordinates (0, 0, 0)");
+		}
+
+		return res;
+	}
+
+	/**
 	 * Loads a photo. The Java object is loaded from the Google Datastore, the Images in all sizes are loaded from the
 	 * Google Cloud storage.
 	 */
