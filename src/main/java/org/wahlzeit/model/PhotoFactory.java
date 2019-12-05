@@ -20,6 +20,7 @@
 
 package org.wahlzeit.model;
 
+import org.wahlzeit.model.landscape.LandscapePhotoFactory;
 import org.wahlzeit.services.LogBuilder;
 
 import java.util.logging.Logger;
@@ -46,19 +47,20 @@ public class PhotoFactory {
 	 * Hidden singleton instance; needs to be initialized from the outside.
 	 */
 	public static void initialize() {
-		getInstance(); // drops result due to getInstance() side-effects
+		// getInstance(); // drops result due to getInstance() side-effects
+		LandscapePhotoFactory.initialize();
 	}
 
 	/**
 	 * Public singleton access method.
 	 */
 	public static synchronized PhotoFactory getInstance() {
-		if (instance == null) {
-			log.config(LogBuilder.createSystemMessage().addAction("setting generic PhotoFactory").toString());
-			setInstance(new PhotoFactory());
-		}
+		// if (instance == null) {
+		// 	log.config(LogBuilder.createSystemMessage().addAction("setting generic PhotoFactory").toString());
+		// 	setInstance(new PhotoFactory());
+		// }
 
-		return instance;
+		return (PhotoFactory) LandscapePhotoFactory.getInstance();
 	}
 
 	/**
