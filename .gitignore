@@ -11,5 +11,6 @@
 .classpath
 run.sh
 dockered_run.sh
+test.sh
 *.swp
 *.swo
