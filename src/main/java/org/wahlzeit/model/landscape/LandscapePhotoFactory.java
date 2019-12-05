@@ -52,21 +52,21 @@ public class LandscapePhotoFactory extends PhotoFactory {
 	/**
 	 * @methodtype factory
 	 */
-	public LandscapePhoto createLandscapePhoto() {
+	public LandscapePhoto createPhoto() {
 		return new LandscapePhoto();
 	}
 
 	/**
 	 * Creates a new photo with the specified id
 	 */
-	public LandscapePhoto createLandscapePhoto(PhotoId id) {
+	public LandscapePhoto createPhoto(PhotoId id) {
 		return new LandscapePhoto(id);
 	}
 
 	/**
 	 * Creates a new photo with the specified location
 	 */
-	public LandscapePhoto createLandscapePhoto(Location location) {
+	public LandscapePhoto createPhoto(Location location) {
 		return new LandscapePhoto(location);
 	}
 
