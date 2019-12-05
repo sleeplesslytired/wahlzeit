@@ -36,4 +36,19 @@ public class LandscapePhotoFactoryTest {
 		LandscapePhotoFactory landscapePhotoFactory = LandscapePhotoFactory.getInstance();
 		landscapePhotoFactory.createLandscapePhotoCartesianCoordinates(0, 0, 0);
 	}
+
+	@Test
+	public void testCreateLandscapePhotoSphericalCoordinatesValid() {
+		LandscapePhotoFactory landscapePhotoFactory = LandscapePhotoFactory.getInstance();
+		assertTrue(landscapePhotoFactory.createLandscapePhotoCartesianCoordinates(4 * Math.PI,
+																				  2.5 * Math.PI,
+																				  13.5)
+				   != null);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testCreateLandscapePhotoSphericalCoordinatesInvalid() {
+		LandscapePhotoFactory landscapePhotoFactory = LandscapePhotoFactory.getInstance();
+		landscapePhotoFactory.createLandscapePhotoSphericalCoordinates(0, 0, 0);
+	}
 }
