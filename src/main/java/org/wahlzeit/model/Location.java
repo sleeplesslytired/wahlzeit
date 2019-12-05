@@ -21,6 +21,21 @@ public class Location {
 		return res;
 	}
 
+	public static Location createSphericalDefinedLocation(double theta, double phi, double radius) {
+		SphericalCoordinate coordinate;
+		Location res;
+
+		try {
+			coordinate = new SphericalCoordinate(theta, phi, radius);
+			res = new Location(coordinate);
+		} catch (IllegalArgumentException iae) {
+			coordinate = new SphericalCoordinate(0.1, 0, 0);
+			res = new Location(coordinate);
+		}
+
+		return res;
+	}
+
 	public Coordinate getCoordinate() {
 		return this.coordinate;
 	}
