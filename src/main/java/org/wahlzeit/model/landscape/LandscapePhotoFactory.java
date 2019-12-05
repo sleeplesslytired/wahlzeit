@@ -91,6 +91,26 @@ public class LandscapePhotoFactory extends PhotoFactory {
 	}
 
 	/**
+	 * Creates a new photo with a location, specified via its spherical coordinates
+	 */
+	public LandscapePhoto createLandscapePhotoSphericalCoordinates(double theta,
+																   double phi,
+																   double radius)
+																   throws IllegalArgumentException {
+		LandscapePhoto res;
+		Location location;
+
+		try {
+			location = Location.createSphericalDefinedLocation(theta, phi, radius);
+			res = new LandscapePhoto(location);
+		} catch (IllegalArgumentException iae) {
+			throw new IllegalArgumentException("LandscapePhoto could not be created, due to a location described by spherical coordiantes with length 0");
+		}
+
+		return res;
+	}
+
+	/**
 	 * Loads a photo. The Java object is loaded from the Google Datastore, the Images in all sizes are loaded from the
 	 * Google Cloud storage.
 	 */
