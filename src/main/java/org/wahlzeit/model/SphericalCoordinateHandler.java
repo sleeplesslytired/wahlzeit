@@ -7,7 +7,7 @@ public class SphericalCoordinateHandler extends AbstractCoordinateHandler {
 	}
 
 	public Coordinate getCoordinate() {
-		return null;
+		return this.coordinateBody;
 	}
 
 }
