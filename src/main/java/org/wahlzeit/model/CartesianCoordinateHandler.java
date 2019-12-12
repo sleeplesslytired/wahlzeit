@@ -7,6 +7,6 @@ public class CartesianCoordinateHandler extends AbstractCoordinateHandler {
 	}
 
 	public Coordinate getCoordinate() {
-		return null;
+		return this.coordinateBody;
 	}
 }
