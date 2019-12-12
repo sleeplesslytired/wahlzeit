@@ -8,6 +8,8 @@ abstract class AbstractCoordinateHandler {
 
 	abstract public Coordinate getCoordinate();
 
+	abstract public double getCentralAngle();
+
 	@Override
 	abstract public boolean equals(Object o);
 }
