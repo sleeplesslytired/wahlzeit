@@ -12,7 +12,9 @@ abstract class AbstractCoordinateHandler {
 		return this.coordinateBody.getCartesianDistance(coordinate);
 	}
 
-	abstract public double getCentralAngle();
+	public double getCentralAngle(Coordinate coordinate) {
+		return this.coordinateBody.getCentralAngle(coordinate);
+	}
 
 	@Override
 	public boolean equals(Object o) {
