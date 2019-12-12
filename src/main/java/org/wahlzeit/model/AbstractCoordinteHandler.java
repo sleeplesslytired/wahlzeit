@@ -8,6 +8,8 @@ abstract class AbstractCoordinateHandler {
 
 	abstract public Coordinate getCoordinate();
 
+	abstract public double getCartesianDistance();
+
 	abstract public double getCentralAngle();
 
 	@Override

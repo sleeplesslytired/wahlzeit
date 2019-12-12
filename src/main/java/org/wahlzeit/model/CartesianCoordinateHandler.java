@@ -35,6 +35,10 @@ public class CartesianCoordinateHandler extends AbstractCoordinateHandler {
 		return this.coordinateBody.asCartesian().getZ();
 	}
 
+	public double getCartesianDistance() {
+		return -1;
+	}
+
 	public double getCentralAngle() {
 		return -1;
 	}

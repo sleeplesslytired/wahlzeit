@@ -35,6 +35,10 @@ public class SphericalCoordinateHandler extends AbstractCoordinateHandler {
 		return this.coordinateBody.asSpherical().getRadius();
 	}
 
+	public double getCartesianDistance() {
+		return -1;
+	}
+
 	public double getCentralAngle() {
 		return -1;
 	}
