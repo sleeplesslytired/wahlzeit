@@ -10,6 +10,15 @@ public class SphericalCoordinateHandler extends AbstractCoordinateHandler {
 		this.coordinateBody = coordinate.asSpherical();
 	}
 
+	public void setCoordinate(double theta, double phi, double radius) throws IllegalArgumentException {
+		try {
+			SphericalCoordinate coordinate = new SphericalCoordinate(theta, phi, radius);
+			this.coordinateBody = coordinate;
+		} catch (IllegalArgumentException iae) {
+			throw new IllegalArgumentException("Tried to set a body coordinate with length 0 to a SphericalCoordinateHandler!");
+		}
+	}
+
 	public Coordinate getCoordinate() {
 		return this.coordinateBody;
 	}
