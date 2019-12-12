@@ -2,19 +2,21 @@ package org.wahlzeit.model;
 
 
 public class Location {
-	public final Coordinate coordinate;
+	public final AbstractCoordinateHandler coordinateHandler;
 
-	public Location(Coordinate coordinate) {
-		this.coordinate = coordinate;
+	public Location(AbstractCoordinateHandler coordinateHandler) {
+		this.coordinateHandler = coordinateHandler;
 	}
 
 	public static Location createCartesianDefinedLocation(double x, double y, double z) {
+		CartesianCoordinateHandler coordinateHandler;
 		CartesianCoordinate coordinate;
 		Location res;
 
 		try {
 			coordinate = new CartesianCoordinate(x, y, z);
-			res = new Location(coordinate);
+			coordinateHandler = new CartesianCoordinateHandler(coordinate);
+			res = new Location(coordinateHandler);
 		} catch (IllegalArgumentException iae) {
 			throw new IllegalArgumentException("Location could not be created due to coordinates that are all 0.");
 		}
@@ -22,21 +24,22 @@ public class Location {
 	}
 
 	public static Location createSphericalDefinedLocation(double theta, double phi, double radius) {
+		SphericalCoordinateHandler coordinateHandler;
 		SphericalCoordinate coordinate;
 		Location res;
 
 		try {
 			coordinate = new SphericalCoordinate(theta, phi, radius);
-			res = new Location(coordinate);
+			coordinateHandler = new SphericalCoordinateHandler(coordinate);
+			res = new Location(coordinateHandler);
 		} catch (IllegalArgumentException iae) {
-			coordinate = new SphericalCoordinate(0.1, 0, 0);
-			res = new Location(coordinate);
+			throw new IllegalArgumentException("Location could not be created due to coordinates that are all 0.");
 		}
 
 		return res;
 	}
 
-	public Coordinate getCoordinate() {
-		return this.coordinate;
+	public AbstractCoordinateHandler getCoordinateHandler() {
+		return this.coordinateHandler;
 	}
 }
