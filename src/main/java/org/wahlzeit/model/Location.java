@@ -2,7 +2,7 @@ package org.wahlzeit.model;
 
 
 public class Location {
-	public final AbstractCoordinateHandler coordinateHandler;
+	private final AbstractCoordinateHandler coordinateHandler;
 
 	public Location(AbstractCoordinateHandler coordinateHandler) {
 		this.coordinateHandler = coordinateHandler;
