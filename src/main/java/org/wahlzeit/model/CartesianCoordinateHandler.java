@@ -10,6 +10,15 @@ public class CartesianCoordinateHandler extends AbstractCoordinateHandler {
 		this.coordinateBody = coordinate.asCartesian();
 	}
 
+	public void setCoordinate(double x, double y, double z) throws IllegalArgumentException {
+		try {
+			CartesianCoordinate coordinate = new CartesianCoordinate(x, y, z);
+			this.coordinateBody = coordinate;
+		} catch (IllegalArgumentException iae) {
+			throw new IllegalArgumentException("Tried to set a body coordinate with length 0 to a CartesianCoordinateHandler!");
+		}
+	}
+
 	public Coordinate getCoordinate() {
 		return this.coordinateBody;
 	}
