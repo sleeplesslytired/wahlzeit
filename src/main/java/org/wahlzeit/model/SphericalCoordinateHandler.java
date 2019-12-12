@@ -35,4 +35,9 @@ public class SphericalCoordinateHandler extends AbstractCoordinateHandler {
 		return this.coordinateBody.asSpherical().getRadius();
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		return false;
+	}
+
 }

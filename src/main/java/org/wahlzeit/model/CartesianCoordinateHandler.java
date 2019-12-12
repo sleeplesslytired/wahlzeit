@@ -35,4 +35,9 @@ public class CartesianCoordinateHandler extends AbstractCoordinateHandler {
 		return this.coordinateBody.asCartesian().getZ();
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		return false;
+	}
+
 }

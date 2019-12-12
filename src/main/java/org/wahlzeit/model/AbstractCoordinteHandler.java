@@ -7,4 +7,7 @@ abstract class AbstractCoordinateHandler {
 	abstract public void setCoordinate(Coordinate coordinate);
 
 	abstract public Coordinate getCoordinate();
+
+	@Override
+	abstract public boolean equals(Object o);
 }
