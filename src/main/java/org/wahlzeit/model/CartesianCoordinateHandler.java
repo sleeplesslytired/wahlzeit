@@ -43,9 +43,4 @@ public class CartesianCoordinateHandler extends AbstractCoordinateHandler {
 		return -1;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		return false;
-	}
-
 }

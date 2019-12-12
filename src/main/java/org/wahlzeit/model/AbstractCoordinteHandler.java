@@ -13,5 +13,17 @@ abstract class AbstractCoordinateHandler {
 	abstract public double getCentralAngle();
 
 	@Override
-	abstract public boolean equals(Object o);
+	public boolean equals(Object o) {
+		if (o == null) {
+			return false;
+		}
+
+		if (! (o instanceof AbstractCoordinateHandler)) {
+			return false;
+		}
+
+		Coordinate coordinate = ((AbstractCoordinateHandler) o).coordinateBody;
+
+		return this.coordinateBody.equals(coordinate);
+	}
 }
