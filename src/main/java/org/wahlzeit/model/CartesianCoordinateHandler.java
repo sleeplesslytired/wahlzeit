@@ -13,4 +13,17 @@ public class CartesianCoordinateHandler extends AbstractCoordinateHandler {
 	public Coordinate getCoordinate() {
 		return this.coordinateBody;
 	}
+
+	public double getX() {
+		return this.coordinateBody.asCartesian().getX();
+	}
+
+	public double getY() {
+		return this.coordinateBody.asCartesian().getY();
+	}
+
+	public double getZ() {
+		return this.coordinateBody.asCartesian().getZ();
+	}
+
 }
