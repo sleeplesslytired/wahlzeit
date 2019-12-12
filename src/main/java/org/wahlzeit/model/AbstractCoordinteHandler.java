@@ -6,8 +6,6 @@ abstract class AbstractCoordinateHandler {
 
 	abstract public void setCoordinate(Coordinate coordinate);
 
-	abstract public Coordinate getCoordinate();
-
 	public double getCartesianDistance(Coordinate coordinate) {
 		return this.coordinateBody.getCartesianDistance(coordinate);
 	}

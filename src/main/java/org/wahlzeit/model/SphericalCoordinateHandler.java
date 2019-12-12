@@ -19,10 +19,6 @@ public class SphericalCoordinateHandler extends AbstractCoordinateHandler {
 		}
 	}
 
-	public Coordinate getCoordinate() {
-		return this.coordinateBody;
-	}
-
 	public double getTheta() {
 		return this.coordinateBody.asSpherical().getTheta();
 	}
