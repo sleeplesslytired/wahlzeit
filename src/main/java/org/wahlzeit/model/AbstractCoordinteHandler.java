@@ -8,7 +8,9 @@ abstract class AbstractCoordinateHandler {
 
 	abstract public Coordinate getCoordinate();
 
-	abstract public double getCartesianDistance();
+	public double getCartesianDistance(Coordinate coordinate) {
+		return this.coordinateBody.getCartesianDistance(coordinate);
+	}
 
 	abstract public double getCentralAngle();
 
