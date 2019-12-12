@@ -2,6 +2,10 @@ package org.wahlzeit.model;
 
 
 public class SphericalCoordinateHandler extends AbstractCoordinateHandler {
+	public SphericalCoordinateHandler(Coordinate coordinate) {
+		this.coordinateBody = coordinate.asSpherical();
+	}
+
 	public void setCoordinate(Coordinate coordinate) {
 		this.coordinateBody = coordinate.asSpherical();
 	}
