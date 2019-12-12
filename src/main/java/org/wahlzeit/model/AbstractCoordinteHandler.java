@@ -30,4 +30,9 @@ abstract class AbstractCoordinateHandler {
 
 		return this.coordinateBody.equals(coordinate);
 	}
+
+	@Override
+	public final int hashCode() {
+		return this.coordinateBody.hashCode();
+	}
 }
