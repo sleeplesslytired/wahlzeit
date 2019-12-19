@@ -125,4 +125,9 @@ public class SphericalCoordinate extends AbstractCoordinate {
 		return res;
 	}
 
+	@Override
+	public String toString() {
+		return "(" + Double.toString(getTheta()) + ", " + Double.toString(getPhi()) + ", " + Double.toString(getRadius()) + ")";
+	}
+
 }

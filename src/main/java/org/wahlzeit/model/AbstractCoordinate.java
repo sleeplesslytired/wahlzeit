@@ -52,4 +52,7 @@ abstract class AbstractCoordinate implements Coordinate {
 		}
 	}
 
+	@Override
+	abstract public String toString();
+
 }

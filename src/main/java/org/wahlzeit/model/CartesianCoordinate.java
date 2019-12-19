@@ -117,5 +117,10 @@ public class CartesianCoordinate extends AbstractCoordinate {
 		double[] res = {this.x, this.y, this.z};
 		return res;
 	}
+
+	@Override
+	public String toString() {
+		return "(" + Double.toString(getX()) + ", " + Double.toString(getY()) + ", " + Double.toString(getZ()) + ")";
+	}
 	
 }
