@@ -26,9 +26,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
+@interface PatternInstance {
+	String patternName();
+	String[] participants();
+}
+
 /**
  * A null servlet.
  */
+@PatternInstance (
+	patternName = "Null object pattern",
+	participants = {"Nullobject"}
+)
 public class NullServlet extends AbstractServlet {
 
 	/**
