@@ -5,7 +5,13 @@ import org.wahlzeit.model.*;
 import java.util.List;
 import java.util.LinkedList;
 
+
 @Entity
+@PatternInstance(
+	patternName = "Abstract Factory",
+	participants = {"AbstractProduct",
+					"ConcreteProduct"}
+)
 public class LandscapePhoto extends Photo {
 	private List<String> landscapeDescriptors = new LinkedList<String>();
 
