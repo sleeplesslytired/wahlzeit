@@ -13,6 +13,10 @@ import java.util.logging.Logger;
  * 
  * @review
  */
+@PatternInstance (
+	patternName = "Adapter",
+	participants = {"Adaptee"}
+)
 public abstract class ImageStorage {
 
 	private static final Logger log = Logger.getLogger(ImageStorage.class.getName());
