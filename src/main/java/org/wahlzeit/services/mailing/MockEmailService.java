@@ -27,6 +27,10 @@ import javax.mail.Message;
 /**
  * Abstract superclass for non-trivial EmailServer implementations.
  */
+@PatternInstance (
+	patternName = "Composite",
+	participants = {"Leaf"}
+)
 public class MockEmailService extends AbstractEmailService {
 
 	/**

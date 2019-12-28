@@ -39,6 +39,10 @@ import java.util.logging.Logger;
 /**
  *
  */
+@PatternInstance (
+	patternName = "Composite",
+	participants = {"Leaf"}
+)
 public class SmtpEmailService extends AbstractEmailService {
 
 	private static final Logger log = Logger.getLogger(SmtpEmailService.class.getName());
