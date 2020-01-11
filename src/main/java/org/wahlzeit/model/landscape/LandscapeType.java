@@ -47,4 +47,29 @@ public class LandscapeType {
 		return this.superType;
 	}
 
+	public Iterator<LandscapeType> getSubTypesIterator() {
+		return this.subTypes.iterator();
+	}
+
+	public void addSubType(LandscapeType subType) {
+		if (subType == null) {
+			throw new IllegalArgumentException("con not add null as sub type to a landscape type!");
+		}
+
+		this.subTypes.add(subType);
+
+		subType.superType = this;
+		subType.addCharacteristics(this.getCharacteristicsIterator());
+	}
+
+	public void addSubTypes(Iterator<LandscapeType> subTypes) {
+		if (subTypes == null) {
+			throw new IllegalArgumentException("can not add subTypes from a null iterator to a landscape type!");
+		}
+
+		while (subTypes.hasNext()) {
+			this.addSubType(subTypes.next());
+		}
+	}
+
 }
