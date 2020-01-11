@@ -16,4 +16,20 @@ public class LandscapeManager {
 		return instance;
 	}
 
+	protected LandscapeType getLandscapeType(Set<String> characteristics) {
+		for (LandscapeType landscapeType : this.landscapeTypes) {
+			Iterator<String> landscapeTypeCharacteristics = landscapeType.getCharacteristicsIterator();
+			HashSet<String> superSet = new HashSet<String>();	
+			while (landscapeTypeCharacteristics.hasNext()) {
+				superSet.add(landscapeTypeCharacteristics.next());
+			}
+
+			if (superSet.containsAll(characteristics)) {
+				return landscapeType;
+			}
+		}
+
+		return null;
+	}
+
 }
