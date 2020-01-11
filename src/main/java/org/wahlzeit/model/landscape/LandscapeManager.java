@@ -32,4 +32,10 @@ public class LandscapeManager {
 		return null;
 	}
 
+	public void addLandscapeType(LandscapeType landscapeType) {
+		if (!this.landscapeTypes.contains(landscapeType)) {
+			this.landscapeTypes.add(landscapeType);
+		}
+	}
+
 }
