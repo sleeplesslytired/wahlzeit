@@ -17,4 +17,8 @@ public class Landscape {
 		this.landscapeType = landscapeType;
 	}
 
+	public Location getLocation() {
+		return this.location;
+	}
+
 }
