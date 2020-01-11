@@ -23,12 +23,11 @@ public class LandscapePhotoFactoryTest {
 		location = new Location(new CartesianCoordinate(4, 2, 3));
 
 		landscapeCharacteristics = new HashSet<String>();
-		landscapeCharacteristics.add("rocky");
-		landscapeCharacteristics.add("dusty");
-		landscapeCharacteristics.add("hot weather");
-		landscapeCharacteristics.add("arid");
+		landscapeCharacteristics.add("barren");
+		landscapeCharacteristics.add("little precipation");
+		landscapeCharacteristics.add("life hostile");
 
-		LandscapeType desert = new LandscapeType();
+		LandscapeType desert = new LandscapeType("desert");
 		desert.addCharacteristics(landscapeCharacteristics.iterator());
 
 		LandscapeManager landscapeManager = LandscapeManager.getInstance();

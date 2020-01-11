@@ -12,13 +12,15 @@ public class LandscapeType {
 	protected LandscapeType superType = null;
 	protected Set<LandscapeType> subTypes = new HashSet<LandscapeType>();
 	protected Set<String> characteristics = new HashSet<String>();
+	protected String name;
 
-	public LandscapeType() {
-
+	public LandscapeType(String name) {
+		this.name = name;
 	}
 
-	public LandscapeType(LandscapeType superType) {
-
+	public LandscapeType(String name, LandscapeType superType) {
+		this.name = name;
+		this.superType = superType;
 	}
 
 	public void addCharacteristic(String characteristic) {
@@ -53,7 +55,7 @@ public class LandscapeType {
 
 	public void addSubType(LandscapeType subType) {
 		if (subType == null) {
-			throw new IllegalArgumentException("con not add null as sub type to a landscape type!");
+			throw new IllegalArgumentException("can not add null as sub type to a landscape type!");
 		}
 
 		this.subTypes.add(subType);
@@ -93,6 +95,10 @@ public class LandscapeType {
 
 	public Landscape createInstance(Location location) {
 		return new Landscape(location, this);
+	}
+
+	public String getName() {
+		return this.name;
 	}
 
 }
