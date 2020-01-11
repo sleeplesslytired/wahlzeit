@@ -21,4 +21,12 @@ public class Landscape {
 		return this.location;
 	}
 
+	public LandscapeType getLandscapeType() {
+		return this.landscapeType;
+	}
+
+	public void setLandscapeType(LandscapeType landscapeType) {
+		this.landscapeType = landscapeType;
+	}
+
 }
