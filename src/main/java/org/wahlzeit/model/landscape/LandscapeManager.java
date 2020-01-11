@@ -16,6 +16,17 @@ public class LandscapeManager {
 		return instance;
 	}
 
+	public Landscape createLandscape(Location location, Set<String> characteristics) {
+		LandscapeType landscapeType = this.getLandscapeType(characteristics);	
+		if (landscapeType == null) {
+			throw new IllegalArgumentException("No matching landscape type found to characteristics");
+		}
+
+		Landscape landscape = landscapeType.createInstance(location);
+
+		return landscape;
+	}
+
 	protected LandscapeType getLandscapeType(Set<String> characteristics) {
 		for (LandscapeType landscapeType : this.landscapeTypes) {
 			Iterator<String> landscapeTypeCharacteristics = landscapeType.getCharacteristicsIterator();
