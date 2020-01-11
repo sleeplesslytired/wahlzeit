@@ -72,4 +72,27 @@ public class LandscapeType {
 		}
 	}
 
+	public boolean hasInstance(Landscape landscape) {
+		if (landscape == null) {
+			throw new IllegalArgumentException("can not check for subtypes on a null landscape!");
+		}
+
+		if (landscape.getLandscapeType() == this) {
+			return true;
+		}
+
+		Iterator<LandscapeType> subTypes = this.subTypes.iterator();
+		while (subTypes.hasNext()) {
+			if (subTypes.next().hasInstance(landscape)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public Landscape createInstance(Location location) {
+		return new Landscape(location, this);
+	}
+
 }
