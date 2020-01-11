@@ -43,4 +43,8 @@ public class LandscapeType {
 		return this.characteristics.iterator();
 	}
 
+	public LandscapeType getSuperType() {
+		return this.superType;
+	}
+
 }
