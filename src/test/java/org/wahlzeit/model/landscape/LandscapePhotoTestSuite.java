@@ -6,8 +6,7 @@ import org.wahlzeit.model.landscape.*;
 
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({LandscapePhotoTest.class,
-					 LandscapePhotoFactoryTest.class})
+@Suite.SuiteClasses({LandscapePhotoFactoryTest.class})
 public class LandscapePhotoTestSuite {
 
 }
