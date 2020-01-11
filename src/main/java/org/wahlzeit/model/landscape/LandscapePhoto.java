@@ -13,13 +13,13 @@ import java.util.LinkedList;
 					"ConcreteProduct"}
 )
 public class LandscapePhoto extends Photo {
-	private List<String> landscapeDescriptors = new LinkedList<String>();
-
+	private Landscape landscape;
 	/**
 	 *
 	 */
-	public LandscapePhoto() {
+	public LandscapePhoto(Landscape landscape) {
 		super();
+		this.landscape = landscape;
 	}
 
 	/**
@@ -30,52 +30,10 @@ public class LandscapePhoto extends Photo {
 	}
 
 	/**
-	 * specify Location on initiation
-	 */
-	public LandscapePhoto(Location location) {
-		super(location);
-	}
-
-	/**
 	 * @methodtype get
 	 */
-	public List<String> getLandscapeDescriptors() {
-		List<String> landscapeDescriptors = new LinkedList<String>();
-		for (String item : this.landscapeDescriptors) {
-			landscapeDescriptors.add(item);
-		}
-		return landscapeDescriptors;
-	}
-
-	/**
-	 * @methodtype add
-	 */
-	protected void doAddLandscapeDescriptor(String newDescriptor) throws IllegalArgumentException {
-		if (newDescriptor == null) {
-			throw new IllegalArgumentException("descriptor is not allowed to be null");
-		}
-
-		if (newDescriptor.equals("")) {
-			throw new IllegalArgumentException("descripttor should not be empty");
-		}
-
-		for (String item : this.landscapeDescriptors) {
-			if(item.toUpperCase().equals(newDescriptor.toUpperCase())) {
-				throw new IllegalArgumentException("descriptor already exists");
-			}
-		}
-
-		this.landscapeDescriptors.add(newDescriptor);
-
-	}
-
-	public boolean addLandscapeDescriptor(String newDescriptor) {
-		try {
-			doAddLandscapeDescriptor(newDescriptor);
-		} catch (IllegalArgumentException ex) {
-			return false;
-		}
-		return true;
+	public Landscape getLandscape() {
+		return this.landscape;
 	}
 
 }

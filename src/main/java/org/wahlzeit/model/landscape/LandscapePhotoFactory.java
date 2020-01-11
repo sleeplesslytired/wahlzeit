@@ -1,5 +1,7 @@
 package org.wahlzeit.model.landscape;
 
+import java.util.Set;
+
 import org.wahlzeit.model.*;
 import org.wahlzeit.services.LogBuilder;
 
@@ -58,37 +60,32 @@ public class LandscapePhotoFactory extends PhotoFactory {
 	/**
 	 * @methodtype factory
 	 */
-	public LandscapePhoto createPhoto() {
-		return new LandscapePhoto();
+	public LandscapePhoto createPhoto(Landscape landscape) {
+		return new LandscapePhoto(landscape);
 	}
 
 	/**
-	 * Creates a new photo with the specified id
+	 * @methodtype factory
 	 */
-	public LandscapePhoto createPhoto(PhotoId id) {
-		return new LandscapePhoto(id);
+	public LandscapePhoto createPhoto(Location location, Set<String> landscapeCharacteristics) {
+		LandscapeManager landscapeManager = LandscapeManager.getInstance();
+		Landscape landscape = landscapeManager.createLandscape(location, landscapeCharacteristics);
+		return new LandscapePhoto(landscape);
 	}
 
 	/**
-	 * Creates a new photo with the specified location
+	 * @methodtype factory
 	 */
-	public LandscapePhoto createPhoto(Location location) {
-		return new LandscapePhoto(location);
-	}
-
-	/**
-	 * Creates a new photo with a location, specified via its cartesian coordinates
-	 */
-	public LandscapePhoto createLandscapePhotoCartesianCoordinates(double x,
-																   double y,
-																   double z)
-																   throws IllegalArgumentException {
+	public LandscapePhoto createPhotoCartesianCoordinates(double x, double y,double z,
+									  Set<String> landscapeCharacteristics) throws IllegalArgumentException {
 		LandscapePhoto res;
 		Location location;
 
 		try {
 			location = Location.createCartesianDefinedLocation(x, y, z);
-			res = new LandscapePhoto(location);
+			LandscapeManager landscapeManager = LandscapeManager.getInstance();
+			Landscape landscape = landscapeManager.createLandscape(location, landscapeCharacteristics);
+			res = new LandscapePhoto(landscape);
 		} catch (IllegalArgumentException iae) {
 			throw new IllegalArgumentException("LandscapePhoto could not be created, due to a location described by the cartesian coordinates (0, 0, 0)");
 		}
@@ -97,18 +94,18 @@ public class LandscapePhotoFactory extends PhotoFactory {
 	}
 
 	/**
-	 * Creates a new photo with a location, specified via its spherical coordinates
+	 * @methodtype factory
 	 */
-	public LandscapePhoto createLandscapePhotoSphericalCoordinates(double theta,
-																   double phi,
-																   double radius)
-																   throws IllegalArgumentException {
+	public LandscapePhoto createPhotoSphericalCoordinates(double theta, double phi, double radius,
+									  Set<String> landscapeCharacteristics) throws IllegalArgumentException {
 		LandscapePhoto res;
 		Location location;
 
 		try {
 			location = Location.createSphericalDefinedLocation(theta, phi, radius);
-			res = new LandscapePhoto(location);
+			LandscapeManager landscapeManager = LandscapeManager.getInstance();
+			Landscape landscape = landscapeManager.createLandscape(location, landscapeCharacteristics);
+			res = new LandscapePhoto(landscape);
 		} catch (IllegalArgumentException iae) {
 			throw new IllegalArgumentException("LandscapePhoto could not be created, due to a location described by spherical coordiantes with length 0");
 		}
