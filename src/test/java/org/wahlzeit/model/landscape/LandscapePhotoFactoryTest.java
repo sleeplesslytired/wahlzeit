@@ -15,24 +15,25 @@ import static org.junit.Assert.assertTrue;
 
 public class LandscapePhotoFactoryTest {
 	Location location;
-	HashSet<String> landscapeCharacteristics;
+	HashSet<LandscapeCharacteristic> landscapeCharacteristics;
 	Landscape landscape;
+	LandscapeType desert;
 	
 	@Before
 	public void init() {
 		location = new Location(new CartesianCoordinate(4, 2, 3));
 
-		landscapeCharacteristics = new HashSet<String>();
-		landscapeCharacteristics.add("barren");
-		landscapeCharacteristics.add("little precipation");
-		landscapeCharacteristics.add("life hostile");
+		landscapeCharacteristics = new HashSet<LandscapeCharacteristic>();
+		landscapeCharacteristics.add(new LandscapeCharacteristic("barren"));
+		landscapeCharacteristics.add(new LandscapeCharacteristic("monoton"));
+		landscapeCharacteristics.add(new LandscapeCharacteristic("life hostile"));
 
-		LandscapeType desert = new LandscapeType("desert");
+		desert = new LandscapeType("desert");
 		desert.addCharacteristics(landscapeCharacteristics.iterator());
 
 		LandscapeManager landscapeManager = LandscapeManager.getInstance();
 		landscapeManager.addLandscapeType(desert);
-		landscape = landscapeManager.createLandscape(location, landscapeCharacteristics);
+		landscape = landscapeManager.createLandscape(location, desert);
 	}
 	
 	@Test
@@ -53,26 +54,26 @@ public class LandscapePhotoFactoryTest {
 
 	@Test
 	public void testCreatePhotoViaLocationAndDescriptors() {
-		assertTrue(LandscapePhotoFactory.getInstance().createPhoto(location, landscapeCharacteristics) != null);
+		assertTrue(LandscapePhotoFactory.getInstance().createPhoto(location, desert) != null);
 	}
 
 	@Test
 	public void testCreatePhotoCartesianCoordinates() {
-		assertTrue(LandscapePhotoFactory.getInstance().createPhotoCartesianCoordinates(2, 3, 4, landscapeCharacteristics) != null);
+		assertTrue(LandscapePhotoFactory.getInstance().createPhotoCartesianCoordinates(2, 3, 4, desert) != null);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testCreateLandscapePhotoCartesianCoordinatesInvalid() {
-		LandscapePhotoFactory.getInstance().createPhotoCartesianCoordinates(0, 0, 0, landscapeCharacteristics);
+		LandscapePhotoFactory.getInstance().createPhotoCartesianCoordinates(0, 0, 0, desert);
 	}
 
 	@Test
 	public void testCreatePhotoSphericalCoordinates() {
-		assertTrue(LandscapePhotoFactory.getInstance().createPhotoSphericalCoordinates(2, 3, 4, landscapeCharacteristics) != null);
+		assertTrue(LandscapePhotoFactory.getInstance().createPhotoSphericalCoordinates(2, 3, 4, desert) != null);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testCreateLandscapePhotoSphericalCoordinatesInvalid() {
-		LandscapePhotoFactory.getInstance().createPhotoSphericalCoordinates(0, 0, 0, landscapeCharacteristics);
+		LandscapePhotoFactory.getInstance().createPhotoSphericalCoordinates(0, 0, 0, desert);
 	}
 }

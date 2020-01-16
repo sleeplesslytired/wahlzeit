@@ -11,7 +11,7 @@ import org.wahlzeit.model.*;
 public class LandscapeType {
 	protected LandscapeType superType = null;
 	protected Set<LandscapeType> subTypes = new HashSet<LandscapeType>();
-	protected Set<String> characteristics = new HashSet<String>();
+	protected Set<LandscapeCharacteristic> characteristics = new HashSet<LandscapeCharacteristic>();
 	protected String name;
 
 	public LandscapeType(String name) {
@@ -23,7 +23,7 @@ public class LandscapeType {
 		this.superType = superType;
 	}
 
-	public void addCharacteristic(String characteristic) {
+	public void addCharacteristic(LandscapeCharacteristic characteristic) {
 		if (characteristic == null) {
 			throw new IllegalArgumentException("can not add null as characteristic to a landscape type!");
 		}
@@ -31,7 +31,7 @@ public class LandscapeType {
 		this.characteristics.add(characteristic);
 	}
 
-	public void addCharacteristics(Iterator<String> characteristics) {
+	public void addCharacteristics(Iterator<LandscapeCharacteristic> characteristics) {
 		if (characteristics == null) {
 			throw new IllegalArgumentException("can not add characteristics from a null iterator to a landscape type!");
 		}
@@ -41,8 +41,22 @@ public class LandscapeType {
 		}
 	}
 
-	public Iterator<String> getCharacteristicsIterator() {
-		return this.characteristics.iterator();
+	public Iterator<LandscapeCharacteristic> getCharacteristicsIterator() {
+		HashSet<LandscapeCharacteristic> res = new HashSet<LandscapeCharacteristic>();
+
+		Iterator<LandscapeCharacteristic> chars = this.characteristics.iterator();
+		while(chars.hasNext()) {
+			res.add(chars.next());
+		}
+
+		if (this.superType != null) {
+			chars = this.superType.getCharacteristicsIterator();
+			while(chars.hasNext()) {
+				res.add(chars.next());
+			}
+		}
+
+		return res.iterator();
 	}
 
 	public LandscapeType getSuperType() {
@@ -61,7 +75,6 @@ public class LandscapeType {
 		this.subTypes.add(subType);
 
 		subType.superType = this;
-		subType.addCharacteristics(this.getCharacteristicsIterator());
 	}
 
 	public void addSubTypes(Iterator<LandscapeType> subTypes) {

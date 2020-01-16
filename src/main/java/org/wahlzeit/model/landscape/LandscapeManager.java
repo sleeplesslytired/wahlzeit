@@ -16,31 +16,14 @@ public class LandscapeManager {
 		return instance;
 	}
 
-	public Landscape createLandscape(Location location, Set<String> characteristics) {
-		LandscapeType landscapeType = this.getLandscapeType(characteristics);	
-		if (landscapeType == null) {
+	public Landscape createLandscape(Location location, LandscapeType landscapeType) {
+		if (!this.landscapeTypes.contains(landscapeType)) {
 			throw new IllegalArgumentException("No matching landscape type found to characteristics");
-		}
+		} 
 
 		Landscape landscape = landscapeType.createInstance(location);
 
 		return landscape;
-	}
-
-	protected LandscapeType getLandscapeType(Set<String> characteristics) {
-		for (LandscapeType landscapeType : this.landscapeTypes) {
-			Iterator<String> landscapeTypeCharacteristics = landscapeType.getCharacteristicsIterator();
-			HashSet<String> superSet = new HashSet<String>();	
-			while (landscapeTypeCharacteristics.hasNext()) {
-				superSet.add(landscapeTypeCharacteristics.next());
-			}
-
-			if (superSet.containsAll(characteristics)) {
-				return landscapeType;
-			}
-		}
-
-		return null;
 	}
 
 	public void addLandscapeType(LandscapeType landscapeType) {

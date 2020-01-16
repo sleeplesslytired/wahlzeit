@@ -67,9 +67,9 @@ public class LandscapePhotoFactory extends PhotoFactory {
 	/**
 	 * @methodtype factory
 	 */
-	public LandscapePhoto createPhoto(Location location, Set<String> landscapeCharacteristics) {
+	public LandscapePhoto createPhoto(Location location, LandscapeType landscapeType) {
 		LandscapeManager landscapeManager = LandscapeManager.getInstance();
-		Landscape landscape = landscapeManager.createLandscape(location, landscapeCharacteristics);
+		Landscape landscape = landscapeManager.createLandscape(location, landscapeType);
 		return new LandscapePhoto(landscape);
 	}
 
@@ -77,14 +77,14 @@ public class LandscapePhotoFactory extends PhotoFactory {
 	 * @methodtype factory
 	 */
 	public LandscapePhoto createPhotoCartesianCoordinates(double x, double y,double z,
-									  Set<String> landscapeCharacteristics) throws IllegalArgumentException {
+									  LandscapeType landscapeType) throws IllegalArgumentException {
 		LandscapePhoto res;
 		Location location;
 
 		try {
 			location = Location.createCartesianDefinedLocation(x, y, z);
 			LandscapeManager landscapeManager = LandscapeManager.getInstance();
-			Landscape landscape = landscapeManager.createLandscape(location, landscapeCharacteristics);
+			Landscape landscape = landscapeManager.createLandscape(location, landscapeType);
 			res = new LandscapePhoto(landscape);
 		} catch (IllegalArgumentException iae) {
 			throw new IllegalArgumentException("LandscapePhoto could not be created, due to a location described by the cartesian coordinates (0, 0, 0)");
@@ -97,14 +97,14 @@ public class LandscapePhotoFactory extends PhotoFactory {
 	 * @methodtype factory
 	 */
 	public LandscapePhoto createPhotoSphericalCoordinates(double theta, double phi, double radius,
-									  Set<String> landscapeCharacteristics) throws IllegalArgumentException {
+									  LandscapeType landscapeType) throws IllegalArgumentException {
 		LandscapePhoto res;
 		Location location;
 
 		try {
 			location = Location.createSphericalDefinedLocation(theta, phi, radius);
 			LandscapeManager landscapeManager = LandscapeManager.getInstance();
-			Landscape landscape = landscapeManager.createLandscape(location, landscapeCharacteristics);
+			Landscape landscape = landscapeManager.createLandscape(location, landscapeType);
 			res = new LandscapePhoto(landscape);
 		} catch (IllegalArgumentException iae) {
 			throw new IllegalArgumentException("LandscapePhoto could not be created, due to a location described by spherical coordiantes with length 0");
