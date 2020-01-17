@@ -22,6 +22,11 @@ public class LandscapePhoto extends Photo {
 		this.landscape = landscape;
 	}
 
+	public LandscapePhoto(PhotoId id, Landscape landscape) {
+		super(id);
+		this.landscape = landscape;
+	}
+
 	/**
 	 * @methodtype constructor
 	 */

@@ -6,6 +6,14 @@ import java.util.logging.Logger;
 import java.util.Map;
 import java.util.HashMap;
 
+import com.google.appengine.api.images.Image;
+import com.googlecode.objectify.ObjectifyService;
+import com.googlecode.objectify.Work;
+import org.wahlzeit.model.persistence.ImageStorage;
+import org.wahlzeit.services.LogBuilder;
+import org.wahlzeit.services.ObjectManager;
+import org.wahlzeit.services.Persistent;
+
 
 public class LandscapePhotoManager extends PhotoManager {
 
@@ -44,4 +52,15 @@ public class LandscapePhotoManager extends PhotoManager {
 
 		return result;
 	}
+
+	/**
+	 *
+	 */
+	public Photo createPhoto(String filename, Image uploadedImage, Landscape landscape) throws Exception {
+		PhotoId id = PhotoId.getNextId();
+		LandscapePhoto result = PhotoUtil.createPhoto(filename, id, uploadedImage, landscape);
+		addPhoto(result);
+		return result;
+	}
+
 }

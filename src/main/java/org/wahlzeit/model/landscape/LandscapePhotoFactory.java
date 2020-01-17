@@ -67,6 +67,13 @@ public class LandscapePhotoFactory extends PhotoFactory {
 	/**
 	 * @methodtype factory
 	 */
+	public LandscapePhoto createPhoto(PhotoId id, Landscape landscape) {
+		return new LandscapePhoto(id, landscape);
+	}
+
+	/**
+	 * @methodtype factory
+	 */
 	public LandscapePhoto createPhoto(Location location, LandscapeType landscapeType) {
 		LandscapeManager landscapeManager = LandscapeManager.getInstance();
 		Landscape landscape = landscapeManager.createLandscape(location, landscapeType);

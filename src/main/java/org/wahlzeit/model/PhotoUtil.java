@@ -25,6 +25,7 @@ import com.google.appengine.api.images.ImagesService;
 import com.google.appengine.api.images.ImagesServiceFactory;
 import com.google.appengine.api.images.Transform;
 import org.wahlzeit.services.LogBuilder;
+import org.wahlzeit.model.landscape.*;
 
 import java.util.logging.Logger;
 
@@ -41,6 +42,22 @@ public class PhotoUtil {
 	 */
 	public static Photo createPhoto(String filename, PhotoId id, Image uploadedImage) throws Exception {
 		Photo result = PhotoFactory.getInstance().createPhoto(id);
+		result.setEnding(filename.substring(filename.lastIndexOf(".") + 1));
+
+		createImageFiles(uploadedImage, result);
+
+		int sourceWidth = uploadedImage.getWidth();
+		int sourceHeight = uploadedImage.getHeight();
+		result.setWidthAndHeight(sourceWidth, sourceHeight);
+
+		return result;
+	}
+
+	/**
+	 * @methodtype creation
+	 */
+	public static LandscapePhoto createPhoto(String filename, PhotoId id, Image uploadedImage, Landscape landscape) throws Exception {
+		LandscapePhoto result = LandscapePhotoFactory.getInstance().createPhoto(id, landscape);	
 		result.setEnding(filename.substring(filename.lastIndexOf(".") + 1));
 
 		createImageFiles(uploadedImage, result);
